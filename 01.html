@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的第一个标题</title>
+    <link rel="stylesheet" href="html-basic.css">
+</head>
+<body>
+    <h1>一级标题</h1>
+    <h2>二级标题</h2>
+    <h3>三级标题</h3>
+    <h4>四级标题</h4>
+    <h5>五级标题</h5>
+    <h6>六级标题。最小标题</h6>
+    <p>
+        <!--常用的强调的两种方式：斜体em和加粗strong ；下划线<u>;删除线<s>-->
+        段落的<em>特点</em>：段落中的内容<strong>自动换行</strong>，<br>有<u>自带</u>的间距,<s>需要删除的</s>
+    </p>
+    
+    <hr>
+    <h2>3.超链接和图片</h2>
+    <a href="http://baidu.com"target="_blank">百度</a>
+    <img src="./image/f7f2b8126814ecc100c13fdc61d2d7fe.png"alt="百度logo">
+    <h2>4.列表 ul li</h2>
+    <h3>我喜欢的事</h3>
+    <ul>
+        <li>打游戏</li>
+        <li>看电影</li>
+        <li>看书</li>
+    </ul>
+    <ol type="A">
+        <li>语文</li>
+        <li>数学</li>
+        <li>英语</li> 
+    </ol>
+        
+    <h2>5.表格</h2>
+    <!--cellspacing是单元之间的距离-->
+    cellpadding="3"
+    <table border="2" cellspacing="0" cellpadding="3">
+        <caption>用户信息表</caption>
+        <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>城市</th>
+        </tr>
+        <tr>
+             <td>张三</td>
+             <td>18</td> 
+             <td>男</td> 
+             <td>北京</td>  
+        </tr>
+        <tr>
+            <td>李四</td>
+            <td>19</td>
+            <td>女</td>
+            <td>上海</td>
+
+        </tr>
+        
+    </table> 
+     
+    <form action="http://baidu.com" name="fm" method="post">
+        <p>
+            <input type="text" placeholder="输入用户名"required>
+        </p>
+        <p>
+            <label for="pwd">密码：</label>
+            <!-- 1abel的for属性对应input的id属性，
+            点击labe1标签，会自动聚焦到input输入框-->
+            <input type="password" id="pwd" id=pwd</input>
+        </p>
+         
+    </form>
+    <h2>6.div块级元素</h2>
+    <div style="background:yellow;">
+        <p>div特点1：独占一整行，自动</p>
+        <p>div特点2：可以嵌套任意标签（标题，段落，图片，）</p>
+    </div style> 
+    <div style="background:pink;">
+        <p>div特点1：独占一整行，自动</p>
+        <p>div特点2：可以嵌套任意标签（标题，段落，图片，）</p>
+    </div >
+    <h2>H5语义</h2>
+    <!--header、nav、section、footer、aside、本质上都是div-->//但是有语义化的作用，具体区别是：
+    <header>头部</header>
+    <nav>导航条</nav>
+    <section>内容区域</section>
+    <article>文章区域</article>
+    <footer>尾部/页脚</footer>
+    <aside>侧边栏</aside>
+
+</body>
+</html>

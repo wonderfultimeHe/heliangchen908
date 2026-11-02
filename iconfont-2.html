@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucide 图标 · 矢量制图</title>
+    <style>
+        /* ============ 设计令牌：工程制图纸 ============ */
+        :root {
+            --hlc_vellum: #eef0ea;    /* 描图纸 */
+            --hlc_graphite: #33342f;  /* 铅笔 */
+            --hlc_soft: #6a6b64;      /* 淡铅笔（辅助文字） */
+            --hlc_blue: #1f6fb2;      /* 制图蓝 */
+            --hlc_sienna: #9c6b1e;    /* 赭石（批注） */
+            --hlc_rule: #d3d6cc;      /* 图框线 */
+            --hlc_grid: rgba(51, 52, 47, 0.05); /* 方格纸网格 */
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            /* 方格纸：两层正交网格叠在描图纸上 */
+            background-image:
+                linear-gradient(var(--hlc_grid) 1px, transparent 1px),
+                linear-gradient(90deg, var(--hlc_grid) 1px, transparent 1px);
+            background-size: 24px 24px;
+            background-color: var(--hlc_vellum);
+            color: var(--hlc_graphite);
+            font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+            font-size: 15px;
+            line-height: 1.75;
+            padding: 56px 20px 72px;
+        }
+
+        .hlc_sheet { max-width: 840px; margin: 0 auto; }
+
+        a:focus-visible, button:focus-visible {
+            outline: 2px solid var(--hlc_blue);
+            outline-offset: 3px;
+        }
+
+        /* ============ 版头：图纸标题栏 ============ */
+        .hlc_masthead {
+            padding-bottom: 44px;
+            border-bottom: 2px solid var(--hlc_graphite);
+        }
+
+        .hlc_meta {
+            font-size: 13px;
+            color: var(--hlc_soft);
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .hlc_title {
+            font-weight: 600;
+            font-size: clamp(36px, 6.5vw, 56px);
+            line-height: 1.2;
+            letter-spacing: 0.01em;
+            max-width: 14em;
+        }
+
+        .hlc_subtitle {
+            margin-top: 16px;
+            max-width: 36em;
+            color: var(--hlc_soft);
+        }
+
+        .hlc_subtitle b { color: var(--hlc_graphite); font-weight: 600; }
+        .hlc_subtitle code {
+            font-family: Consolas, monospace;
+            font-size: 0.9em;
+            color: var(--hlc_blue);
+        }
+
+        /* ---- 制图区：一笔一笔画出羽毛 ---- */
+        .hlc_draft {
+            position: relative;
+            height: 300px;
+            margin-top: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 十字定位线 */
+        .hlc_cross_h {
+            position: absolute;
+            left: 0; right: 0; top: 50%;
+            border-top: 1px dashed rgba(51, 52, 47, 0.35);
+        }
+
+        .hlc_cross_v {
+            position: absolute;
+            top: 0; bottom: 0; left: 50%;
+            border-left: 1px dashed rgba(51, 52, 47, 0.35);
+        }
+
+        /* 虚线构造圆 */
+        .hlc_construct {
+            position: absolute;
+            width: 216px; height: 216px;
+            border: 1.5px dashed var(--hlc_blue);
+            border-radius: 50%;
+            opacity: 0.75;
+        }
+
+        /* 中心十字标记 */
+        .hlc_center_dot {
+            position: absolute;
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            background: var(--hlc_vellum);
+            border: 1.5px solid var(--hlc_blue);
+        }
+
+        /* 被绘制的主角：lucide 会把 i 替换成 svg，class 会保留 */
+        .hlc_draft_icon {
+            width: 118px; height: 118px;
+            color: var(--hlc_graphite);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 路径自绘动画：描边从 0 画到全长 */
+        .hlc_draft_icon :is(path, line, circle, polyline, rect) {
+            stroke-dasharray: 130;
+            stroke-dashoffset: 130;
+            animation: hlc_draw 1.5s cubic-bezier(0.5, 0, 0.2, 1) 0.4s forwards;
+        }
+
+        .hlc_draft_icon :is(path, line, circle, polyline, rect):nth-of-type(2) {
+            animation-delay: 1.4s; /* 第二笔等第一笔落完 */
+        }
+
+        @keyframes hlc_draw {
+            to { stroke-dashoffset: 0; }
+        }
+
+        /* 图上批注：楷体，像工程师的手写标注 */
+        .hlc_annotation {
+            position: absolute;
+            font-family: "KaiTi", "楷体", "STKaiti", serif;
+            font-size: 15px;
+            color: var(--hlc_sienna);
+            white-space: nowrap;
+        }
+
+        .hlc_annotation::before { content: "— "; color: var(--hlc_blue); }
+
+        .hlc_anno_a { top: 12%; left: 4%; }
+        .hlc_anno_b { top: 42%; right: 0; }
+        .hlc_anno_c { bottom: 8%; left: 22%; }
+
+        /* ============ 章节 ============ */
+        .hlc_section { margin-top: 68px; }
+
+        .hlc_section_head {
+            display: flex;
+            align-items: baseline;
+            gap: 14px;
+            flex-wrap: wrap;
+            border-top: 1px solid var(--hlc_rule);
+            padding-top: 18px;
+            margin-bottom: 8px;
+        }
+
+        .hlc_section_head h2 { font-size: 21px; font-weight: 600; }
+
+        .hlc_section_note {
+            margin-left: auto;
+            font-family: Consolas, monospace;
+            font-size: 12px;
+            color: var(--hlc_soft);
+        }
+
+        .hlc_lede { color: var(--hlc_soft); max-width: 40em; margin-bottom: 24px; }
+
+        /* ---- 图例网格：制图单元格 ---- */
+        .hlc_grid {
+            display: flex;
+            flex-wrap: wrap;
+            border-top: 1px solid var(--hlc_rule);
+            border-left: 1px solid var(--hlc_rule);
+        }
+
+        .hlc_grid_cell {
+            width: 16.666%;
+            min-width: 128px;
+            flex-grow: 1;
+            padding: 22px 8px 16px;
+            text-align: center;
+            border-right: 1px solid var(--hlc_rule);
+            border-bottom: 1px solid var(--hlc_rule);
+            background: rgba(238, 240, 234, 0.55);
+        }
+
+        .hlc_grid_cell svg {
+            width: 30px; height: 30px;
+            color: var(--hlc_graphite);
+            margin-bottom: 12px;
+            transition: color 0.2s ease;
+        }
+
+        .hlc_grid_cell:hover svg { color: var(--hlc_blue); }
+
+        .hlc_grid_cell small {
+            font-family: Consolas, monospace;
+            font-size: 11px;
+            color: var(--hlc_soft);
+            word-break: break-all;
+        }
+
+        /* ---- 笔触粗细：铅笔硬度 ---- */
+        .hlc_weights {
+            display: flex;
+            align-items: flex-end;
+            gap: 56px;
+            flex-wrap: wrap;
+            padding-top: 8px;
+        }
+
+        .hlc_weight { text-align: center; }
+
+        .hlc_weight svg {
+            width: 44px; height: 44px;
+            color: var(--hlc_graphite);
+            margin-bottom: 10px;
+        }
+
+        .hlc_weight small {
+            display: block;
+            font-family: Consolas, monospace;
+            font-size: 11px;
+            color: var(--hlc_soft);
+        }
+
+        .hlc_weight em {
+            font-family: "KaiTi", "楷体", serif;
+            font-style: normal;
+            color: var(--hlc_sienna);
+            font-size: 13px;
+        }
+
+        /* stroke-width 用 CSS 覆盖演示 */
+        .hlc_sw1 svg { stroke-width: 1; }
+        .hlc_sw2 svg { stroke-width: 2; }
+        .hlc_sw3 svg { stroke-width: 3; }
+
+        /* ---- 尺寸标注 ---- */
+        .hlc_sizes {
+            display: flex;
+            align-items: flex-end;
+            gap: 44px;
+            flex-wrap: wrap;
+            padding-top: 8px;
+        }
+
+        .hlc_size_item { text-align: center; }
+
+        .hlc_size_item svg {
+            color: var(--hlc_graphite);
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        .hlc_size_item small {
+            font-family: Consolas, monospace;
+            font-size: 11px;
+            color: var(--hlc_soft);
+        }
+
+        /* ---- 动图 ---- */
+        .hlc_motion {
+            display: flex;
+            gap: 26px 64px;
+            flex-wrap: wrap;
+            padding-top: 8px;
+        }
+
+        .hlc_motion_item { text-align: center; }
+
+        .hlc_motion_item svg {
+            width: 36px; height: 36px;
+            display: block;
+            margin: 0 auto 12px;
+            color: var(--hlc_graphite);
+        }
+
+        .hlc_motion_item small {
+            font-family: Consolas, monospace;
+            font-size: 11px;
+            color: var(--hlc_soft);
+        }
+
+        .hlc_spin { animation: hlc_rotate 2s linear infinite; display: inline-block; }
+
+        @keyframes hlc_rotate {
+            from { transform: rotate(0deg); }
+            to   { transform: rotate(360deg); }
+        }
+
+        .hlc_beat { animation: hlc_beat 1s ease-in-out infinite; display: inline-block; color: var(--hlc_blue); }
+
+        @keyframes hlc_beat {
+            0%, 100% { transform: scale(1); }
+            50%      { transform: scale(1.25); }
+        }
+
+        /* ---- 现场绘制 ---- */
+        .hlc_add_btn {
+            font-family: inherit;
+            font-size: 14px;
+            padding: 9px 24px;
+            color: #fff;
+            background: var(--hlc_blue);
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .hlc_add_btn:hover { background: #175886; }
+
+        .hlc_dynamic_box {
+            margin-top: 18px;
+            min-height: 96px;
+            border: 1.5px dashed rgba(51, 52, 47, 0.4);
+            border-radius: 2px;
+            padding: 18px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .hlc_dynamic_box svg { width: 32px; height: 32px; color: var(--hlc_blue); }
+
+        .hlc_drawn_count {
+            font-family: "KaiTi", "楷体", serif;
+            color: var(--hlc_sienna);
+            font-size: 14px;
+        }
+
+        /* ---- 用法图例（代码） ---- */
+        .hlc_proof {
+            background: #2a2b26;
+            color: #e6e8de;
+            font-family: Consolas, "Cascadia Mono", monospace;
+            font-size: 13px;
+            line-height: 2.1;
+            padding: 22px 26px;
+            overflow-x: auto;
+        }
+
+        .hlc_c_tag { color: #7fb7dd; }   /* 标签：制图蓝（亮） */
+        .hlc_c_attr { color: #d9a45b; }  /* 属性：赭石（亮） */
+        .hlc_c_com { color: #82836f; }   /* 注释 */
+
+        .hlc_notes { margin-top: 20px; }
+
+        .hlc_note {
+            font-size: 14px;
+            color: var(--hlc_soft);
+            padding-left: 1.6em;
+            text-indent: -1.6em;
+            margin-bottom: 6px;
+        }
+
+        .hlc_note::before { content: "※ "; color: var(--hlc_blue); }
+
+        /* ============ 图纸尾栏 ============ */
+        .hlc_colophon {
+            margin-top: 76px;
+            border-top: 2px solid var(--hlc_graphite);
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 13px;
+            color: var(--hlc_soft);
+        }
+
+        .hlc_colophon a {
+            color: var(--hlc_graphite);
+            text-decoration-color: var(--hlc_blue);
+            text-underline-offset: 3px;
+        }
+
+        .hlc_colophon a:hover { color: var(--hlc_blue); }
+
+        /* ============ 动效克制：尊重系统设置 ============ */
+        @media (prefers-reduced-motion: reduce) {
+            .hlc_draft_icon :is(path, line, circle, polyline, rect) {
+                animation: none;
+                stroke-dashoffset: 0;
+            }
+            .hlc_spin, .hlc_beat { animation: none; }
+        }
+
+        /* ============ 窄屏 ============ */
+        @media (max-width: 640px) {
+            .hlc_draft { height: 250px; }
+            .hlc_construct { width: 170px; height: 170px; }
+            .hlc_draft_icon { width: 92px; height: 92px; }
+            .hlc_anno_b { display: none; } /* 右侧批注在小屏让位 */
+        }
+    </style>
+</head>
+<body>
+
+    <main class="hlc_sheet">
+
+        <!-- ============ 图纸标题栏 ============ -->
+        <header class="hlc_masthead">
+            <p class="hlc_meta">
+                <span>Lucide · 矢量图标库</span>
+                <span>工程制图 · 本地引阅</span>
+            </p>
+            <h1 class="hlc_title">图标，是一条路径。</h1>
+            <p class="hlc_subtitle">
+                与字体图标不同，Lucide 交付的是<b>真正的矢量图形</b>：
+                JS 扫描 <code>data-lucide</code> 属性，把占位的 <code>&lt;i&gt;</code> 标签替换成
+                <code>&lt;svg&gt;</code>——每枚图标就是几条描边路径。
+                下面这根羽毛，正在被一笔一笔画出来。
+            </p>
+
+            <!-- 制图区 -->
+            <div class="hlc_draft" aria-label="正在绘制的羽毛图标">
+                <span class="hlc_cross_h" aria-hidden="true"></span>
+                <span class="hlc_cross_v" aria-hidden="true"></span>
+                <span class="hlc_construct" aria-hidden="true"></span>
+                <span class="hlc_center_dot" aria-hidden="true"></span>
+                <i data-lucide="feather" class="hlc_draft_icon"></i>
+                <span class="hlc_annotation hlc_anno_a" aria-hidden="true">viewBox 0 0 24 24</span>
+                <span class="hlc_annotation hlc_anno_b" aria-hidden="true">stroke-width 2</span>
+                <span class="hlc_annotation hlc_anno_c" aria-hidden="true">fill · none</span>
+            </div>
+        </header>
+
+        <!-- ============ 1. 图例 ============ -->
+        <section class="hlc_section">
+            <div class="hlc_section_head">
+                <h2>图例</h2>
+                <span class="hlc_section_note">十二枚常用 · 计入图框</span>
+            </div>
+            <p class="hlc_lede">写一个 <b>&lt;i data-lucide="名字"&gt;</b> 占位，脚本运行后原地替换成 svg。鼠标掠过单元格，可以看到它们换上制图蓝。</p>
+
+            <div class="hlc_grid">
+                <div class="hlc_grid_cell"><i data-lucide="heart"></i><small>heart</small></div>
+                <div class="hlc_grid_cell"><i data-lucide="star"></i><small>star</small></div>
+                <div class="hlc_grid_cell"><i data-lucide="user"></i><small>user</small></div>
+                <div class="hlc_grid_cell"><i data-lucide="home"></i><small>home</small></div>
+                <div class="hlc_grid_cell"><i data-lucide="shopping-cart"></i><small>cart</small></div>
+                <div class="hlc_grid_cell"><i data-lucide="camera"></i><small>camera</small></div>
+                <div class="hlc_grid_cell"><i data-lucide="bell"></i><small>bell</small></div>
+                <div class="hlc_grid_cell"><i data-lucide="gift"></i><small>gift</small></div>
+                <div class="hlc_grid_cell"><i data-lucide="thumbs-up"></i><small>thumbs-up</small></div>
+                <div class="hlc_grid_cell"><i data-lucide="search"></i><small>search</small></div>
+                <div class="hlc_grid_cell"><i data-lucide="settings"></i><small>settings</small></div>
+                <div class="hlc_grid_cell"><i data-lucide="smile"></i><small>smile</small></div>
+            </div>
+        </section>
+
+        <!-- ============ 2. 笔触 ============ -->
+        <section class="hlc_section">
+            <div class="hlc_section_head">
+                <h2>笔触</h2>
+                <span class="hlc_section_note">stroke-width 1 / 2 / 3</span>
+            </div>
+            <p class="hlc_lede">同一枚闪电，换三支铅笔：越粗越重，越细越轻。CSS 的 <b>stroke-width</b> 能直接覆盖库里的默认值。</p>
+
+            <div class="hlc_weights">
+                <div class="hlc_weight hlc_sw1"><i data-lucide="zap"></i><small>1</small><em>硬铅 2H</em></div>
+                <div class="hlc_weight hlc_sw2"><i data-lucide="zap"></i><small>2</small><em>标准 HB</em></div>
+                <div class="hlc_weight hlc_sw3"><i data-lucide="zap"></i><small>3</small><em>软铅 2B</em></div>
+            </div>
+        </section>
+
+        <!-- ============ 3. 尺寸 ============ -->
+        <section class="hlc_section">
+            <div class="hlc_section_head">
+                <h2>尺寸</h2>
+                <span class="hlc_section_note">width / height 等比缩放</span>
+            </div>
+            <p class="hlc_lede">矢量图形不怕放大：16 到 64 像素，路径始终锐利，不会像位图一样发糊。</p>
+
+            <div class="hlc_sizes">
+                <div class="hlc_size_item"><i data-lucide="anchor" style="width:16px;height:16px;"></i><small>16</small></div>
+                <div class="hlc_size_item"><i data-lucide="anchor" style="width:24px;height:24px;"></i><small>24</small></div>
+                <div class="hlc_size_item"><i data-lucide="anchor" style="width:36px;height:36px;"></i><small>36</small></div>
+                <div class="hlc_size_item"><i data-lucide="anchor" style="width:48px;height:48px;"></i><small>48</small></div>
+                <div class="hlc_size_item"><i data-lucide="anchor" style="width:64px;height:64px;"></i><small>64</small></div>
+            </div>
+        </section>
+
+        <!-- ============ 4. 动图 ============ -->
+        <section class="hlc_section">
+            <div class="hlc_section_head">
+                <h2>动图</h2>
+                <span class="hlc_section_note">svg 也是普通元素 · 照吃 CSS 动画</span>
+            </div>
+            <p class="hlc_lede">替换出来的 svg 和 div 一样是页面元素，transform、animation 都对它有效。</p>
+
+            <div class="hlc_motion">
+                <div class="hlc_motion_item"><span class="hlc_spin"><i data-lucide="loader"></i></span><small>rotate</small></div>
+                <div class="hlc_motion_item"><span class="hlc_spin"><i data-lucide="refresh-cw"></i></span><small>rotate</small></div>
+                <div class="hlc_motion_item"><span class="hlc_beat"><i data-lucide="heart"></i></span><small>scale</small></div>
+            </div>
+        </section>
+
+        <!-- ============ 5. 现场绘制 ============ -->
+        <section class="hlc_section">
+            <div class="hlc_section_head">
+                <h2>现场绘制</h2>
+                <span class="hlc_section_note">新元素需再调一次 createIcons</span>
+            </div>
+            <p class="hlc_lede">JS 后来生成的元素不会被自动替换——每画一枚，都要再喊一次 <b>lucide.createIcons()</b>。</p>
+
+            <button class="hlc_add_btn" id="hlc_add_btn">再画一枚</button>
+            <div class="hlc_dynamic_box" id="hlc_dynamic_box">
+                <span class="hlc_drawn_count" id="hlc_drawn_count">已绘制 0 枚</span>
+            </div>
+        </section>
+
+        <!-- ============ 6. 用法图例 ============ -->
+        <section class="hlc_section">
+            <div class="hlc_section_head">
+                <h2>用法图例</h2>
+                <span class="hlc_section_note">三行可用</span>
+            </div>
+
+            <div class="hlc_proof">
+                <span class="hlc_c_tag">&lt;script</span> <span class="hlc_c_attr">src</span>="cdn/lucide.min.js"<span class="hlc_c_tag">&gt;&lt;/script&gt;</span><br><br>
+                <span class="hlc_c_tag">&lt;i</span> <span class="hlc_c_attr">data-lucide</span>="heart"<span class="hlc_c_tag">&gt;&lt;/i&gt;</span><br><br>
+                <span class="hlc_c_tag">&lt;script&gt;</span><br>
+                &nbsp;&nbsp;lucide.createIcons(); <span class="hlc_c_com">// 把 i 替换成 svg</span><br>
+                <span class="hlc_c_tag">&lt;/script&gt;</span>
+            </div>
+
+            <div class="hlc_notes">
+                <p class="hlc_note">替换发生在 JS 运行时：查看源码看到的只是占位的 i 标签。</p>
+                <p class="hlc_note">缩放改 width / height，换色改 color——描边颜色会继承文字色。</p>
+                <p class="hlc_note">图标名用短横线连接单词，如 shopping-cart、thumbs-up。</p>
+            </div>
+        </section>
+
+        <!-- ============ 图纸尾栏 ============ -->
+        <footer class="hlc_colophon">
+            <span>制图完毕 · 比例 1:1 · 共计图例十九枚</span>
+            <span>
+                <a href="iconfont-1.html">上一张：Font Awesome 活字打样稿</a>&emsp;
+                <a href="index.html">返回首页</a>
+            </span>
+        </footer>
+
+    </main>
+
+    <!-- 引入本地下载的 Lucide（UMD 版，暴露全局变量 lucide） -->
+    <script src="cdn/lucide.min.js"></script>
+    <script>
+        // 把页面里所有 data-lucide 的 i 标签替换成 SVG
+        lucide.createIcons();
+
+        // 现场绘制演示
+        var hlc_icon_pool = ['rocket', 'coffee', 'music', 'map-pin', 'camera', 'sun', 'moon', 'cloud', 'anchor', 'bike'];
+        var hlc_drawn_total = 0;
+
+        document.getElementById('hlc_add_btn').onclick = function () {
+            // 随机取一枚图标名，造一个占位 i 标签放进图纸
+            var hlc_next_name = hlc_icon_pool[Math.floor(Math.random() * hlc_icon_pool.length)];
+            var hlc_new_icon = document.createElement('i');
+            hlc_new_icon.setAttribute('data-lucide', hlc_next_name);
+            document.getElementById('hlc_dynamic_box').appendChild(hlc_new_icon);
+
+            // 关键：新元素必须重新调用 createIcons 才会变成 svg
+            lucide.createIcons();
+
+            hlc_drawn_total++;
+            document.getElementById('hlc_drawn_count').textContent = '已绘制 ' + hlc_drawn_total + ' 枚';
+        };
+    </script>
+
+</body>
+</html>

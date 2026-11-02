@@ -1,0 +1,292 @@
+[
+  {
+    "file": "image/food-hotpot.jpg",
+    "source": "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1400&q=85",
+    "provider": "Unsplash",
+    "sha256": "23c2a585370a1626dfd28d0830b80ffc777095fc8d1811785e5bde5318aa1ff5",
+    "note": "网络摄影配图，商家和套餐为课程演示数据，不表示真实店铺实拍。"
+  },
+  {
+    "file": "image/food-bbq.jpg",
+    "source": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1400&q=85",
+    "provider": "Unsplash",
+    "sha256": "36d089db26810d1711f9182a3e819d49f728cb0ffccad029bb732aae42aea003",
+    "note": "网络摄影配图，商家和套餐为课程演示数据，不表示真实店铺实拍。"
+  },
+  {
+    "file": "image/food-sushi.jpg",
+    "source": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=1400&q=85",
+    "provider": "Unsplash",
+    "sha256": "68dace25211f36a334c91f093c2c910833b91976f0aaf0f0d5229fa9ea35a0c8",
+    "note": "网络摄影配图，商家和套餐为课程演示数据，不表示真实店铺实拍。"
+  },
+  {
+    "file": "image/food-noodles.jpg",
+    "source": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1400&q=85",
+    "provider": "Unsplash",
+    "sha256": "925063b56f829b23f21a2e2c075828531e9400b86c7cd57a568adee9dc6c9fba",
+    "note": "网络摄影配图，商家和套餐为课程演示数据，不表示真实店铺实拍。"
+  },
+  {
+    "file": "image/food-pizza.jpg",
+    "source": "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1400&q=85",
+    "provider": "Unsplash",
+    "sha256": "384698e2c7454759514c12b70ca364427dc52630c1962a78deb55d0ef39c61e7",
+    "note": "网络摄影配图，商家和套餐为课程演示数据，不表示真实店铺实拍。"
+  },
+  {
+    "file": "image/food-dessert.jpg",
+    "source": "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=1400&q=85",
+    "provider": "Unsplash",
+    "sha256": "fbdd086e1406667d5e932ae29fc82166a021c526d1aeac5fb3dfef52d950d045",
+    "note": "网络摄影配图，商家和套餐为课程演示数据，不表示真实店铺实拍。"
+  },
+  {
+    "file": "image/food-burger.jpg",
+    "source": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1400&q=85",
+    "provider": "Unsplash",
+    "sha256": "c1b1c9a214bd82436c604550ca24751eba9afec651dd1677a012e8e435960751",
+    "note": "网络摄影配图，商家和套餐为课程演示数据，不表示真实店铺实拍。"
+  },
+  {
+    "file": "image/food-cafe.jpg",
+    "source": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1400&q=85",
+    "provider": "Unsplash",
+    "sha256": "16a7217f9ed487b0a464eb35f96b539ecb1de4de291345cc7b763a563ed08244",
+    "note": "网络摄影配图，商家和套餐为课程演示数据，不表示真实店铺实拍。"
+  },
+  {
+    "file": "image/food-steak.jpg",
+    "source": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=1400&q=85",
+    "provider": "Unsplash",
+    "sha256": "c7522916c431904c503851bb11d222822e22e68b1a3e11fa57e53d165b2def75",
+    "note": "网络摄影配图，商家和套餐为课程演示数据，不表示真实店铺实拍。"
+  },
+  {
+    "file": "image/hotel-room.jpg",
+    "source": "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1400&q=85",
+    "provider": "Unsplash",
+    "sha256": "439831a72a4c16508c0e6360dce0692a8582d0598236998ff1abf7e59ad1c461",
+    "note": "网络摄影配图，商家和套餐为课程演示数据，不表示真实店铺实拍。"
+  },
+  {
+    "file": "image/hotel-pool.jpg",
+    "source": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1400&q=85",
+    "provider": "Unsplash",
+    "sha256": "6e0602d6dcbfb90d881a4a713cdcb1791eefab1fe87d3c0d22472da0288916b0",
+    "note": "网络摄影配图，商家和套餐为课程演示数据，不表示真实店铺实拍。"
+  },
+  {
+    "file": "image/hotel-resort.jpg",
+    "source": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1400&q=85",
+    "provider": "Unsplash",
+    "sha256": "26882fbce6c9a334b4a8bd516066a30139afd6e1f5bb52a27842a866dc6fd4b5",
+    "note": "网络摄影配图，商家和套餐为课程演示数据，不表示真实店铺实拍。"
+  },
+  {
+    "file": "image/hotel-suite.jpg",
+    "source": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1400&q=85",
+    "provider": "Unsplash",
+    "sha256": "5447e6712704d8f213efc9e5e2ba2b0c935003361617364517dbbba0ecc52042",
+    "note": "网络摄影配图，商家和套餐为课程演示数据，不表示真实店铺实拍。"
+  },
+  {
+    "file": "image/travel-coast.jpg",
+    "source": "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1400&q=85",
+    "provider": "Unsplash",
+    "sha256": "e64d1ec2aa96f4e33405a0694c31730547ae355782817f8b76bbef02fd84ce59",
+    "note": "网络摄影配图，商家和套餐为课程演示数据，不表示真实店铺实拍。"
+  },
+  {
+    "file": "image/travel-mountain.jpg",
+    "source": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1400&q=85",
+    "provider": "Unsplash",
+    "sha256": "c65f5c99c7d9c2295cb363e5e9321b4268fe3dd576205b01beeccbd6f78d980d",
+    "note": "网络摄影配图，商家和套餐为课程演示数据，不表示真实店铺实拍。"
+  },
+  {
+    "file": "image/travel-city.jpg",
+    "source": "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1400&q=85",
+    "provider": "Unsplash",
+    "sha256": "a1f2aa1e6ff4399102aa420580c9cb4b10656c22a751f7eeef107b8329e6d83d",
+    "note": "网络摄影配图，商家和套餐为课程演示数据，不表示真实店铺实拍。"
+  },
+  {
+    "file": "image/travel-park.jpg",
+    "source": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1400&q=85",
+    "provider": "Unsplash",
+    "sha256": "23e3fb2f950bca785317b2aebd502944aa9b05469f3150806fdf62100f251996",
+    "note": "网络摄影配图，商家和套餐为课程演示数据，不表示真实店铺实拍。"
+  },
+  {
+    "file": "image/icon-location.svg",
+    "source": "https://www.iconfont.cn/api/collection/detail.json?id=42993",
+    "collection": "https://www.iconfont.cn/collections/detail?cid=42993",
+    "icon_id": 33987017,
+    "original_name": "定位",
+    "provider": "iconfont · 天猫好房官方图标库",
+    "sha256": "8fbb82da880d4bd32bed2344be0d679a56c8c5b3a2db18fbd624b2fa7614b47c"
+  },
+  {
+    "file": "image/icon-user.svg",
+    "source": "https://www.iconfont.cn/api/collection/detail.json?id=42993",
+    "collection": "https://www.iconfont.cn/collections/detail?cid=42993",
+    "icon_id": 33987000,
+    "original_name": "个人中心-置灰",
+    "provider": "iconfont · 天猫好房官方图标库",
+    "sha256": "64cab889098cfbdd5fad1429c08feaee1f4c2c4fab7ae1f93e6dc0c85a8f21f9"
+  },
+  {
+    "file": "image/icon-heart.svg",
+    "source": "https://www.iconfont.cn/api/collection/detail.json?id=42993",
+    "collection": "https://www.iconfont.cn/collections/detail?cid=42993",
+    "icon_id": 33986997,
+    "original_name": "喜欢",
+    "provider": "iconfont · 天猫好房官方图标库",
+    "sha256": "b8cc817ab2eef1d038eab0704619b9371c1d2ad5f0f04a5ed82ce30b48e28ea8"
+  },
+  {
+    "file": "image/icon-home.svg",
+    "source": "https://www.iconfont.cn/api/collection/detail.json?id=42993",
+    "collection": "https://www.iconfont.cn/collections/detail?cid=42993",
+    "icon_id": 33986999,
+    "original_name": "首页-置灰",
+    "provider": "iconfont · 天猫好房官方图标库",
+    "sha256": "0d1ba7c505dbbb0f10ea35ab90162229569d13a82bf67dcbdb46df983b161b6a"
+  },
+  {
+    "file": "image/icon-shop.svg",
+    "source": "https://www.iconfont.cn/api/collection/detail.json?id=42993",
+    "collection": "https://www.iconfont.cn/collections/detail?cid=42993",
+    "icon_id": 33987007,
+    "original_name": "店铺",
+    "provider": "iconfont · 天猫好房官方图标库",
+    "sha256": "746db8e282843239e34acc62fee3cfddd38470fb207dca9b9fbb0bf0b7e8f343"
+  },
+  {
+    "file": "image/icon-close.svg",
+    "source": "https://www.iconfont.cn/api/collection/detail.json?id=42993",
+    "collection": "https://www.iconfont.cn/collections/detail?cid=42993",
+    "icon_id": 33987013,
+    "original_name": "关闭",
+    "provider": "iconfont · 天猫好房官方图标库",
+    "sha256": "04d405e8a30bbfa0c574ff3dc109db593c6991e5361722d2bba7e543e774fdea"
+  },
+  {
+    "file": "image/icon-arrow.svg",
+    "source": "https://www.iconfont.cn/api/collection/detail.json?id=42993",
+    "collection": "https://www.iconfont.cn/collections/detail?cid=42993",
+    "icon_id": 33987169,
+    "original_name": "进入",
+    "provider": "iconfont · 天猫好房官方图标库",
+    "sha256": "eb38a526f1807c738adc765362561fc40669755a174fad3036f624412592377d"
+  },
+  {
+    "file": "image/icon-down.svg",
+    "source": "https://www.iconfont.cn/api/collection/detail.json?id=42993",
+    "collection": "https://www.iconfont.cn/collections/detail?cid=42993",
+    "icon_id": 33987164,
+    "original_name": "下拉",
+    "provider": "iconfont · 天猫好房官方图标库",
+    "sha256": "948484bd330608e4b2af93974612ba7ffc0185dbc35044d86d5e09b2beffd534"
+  },
+  {
+    "file": "image/icon-edit.svg",
+    "source": "https://www.iconfont.cn/api/collection/detail.json?id=42993",
+    "collection": "https://www.iconfont.cn/collections/detail?cid=42993",
+    "icon_id": 33987167,
+    "original_name": "编辑",
+    "provider": "iconfont · 天猫好房官方图标库",
+    "sha256": "9e1726ee3d3dbdae7a6f160f4a9bacbca3a36819800c3550c6897c09bb67336e"
+  },
+  {
+    "file": "image/icon-bed.svg",
+    "source": "https://www.iconfont.cn/api/collection/detail.json?id=42993",
+    "collection": "https://www.iconfont.cn/collections/detail?cid=42993",
+    "icon_id": 33997648,
+    "original_name": "床",
+    "provider": "iconfont · 天猫好房官方图标库",
+    "sha256": "f7f2f20fa6f2ac7c318515cdde1fb66970971ca94fbe83d439a6bdb84554543e"
+  },
+  {
+    "file": "image/icon-food.svg",
+    "source": "https://www.iconfont.cn/api/collection/detail.json?id=42993",
+    "collection": "https://www.iconfont.cn/collections/detail?cid=42993",
+    "icon_id": 33997770,
+    "original_name": "DIY餐吧",
+    "provider": "iconfont · 天猫好房官方图标库",
+    "sha256": "487ee737dcc640810a854cac4af719dc0d5ce6b98914ef83d2da00e313a6a909"
+  },
+  {
+    "file": "image/icon-film.svg",
+    "source": "https://www.iconfont.cn/api/collection/detail.json?id=42993",
+    "collection": "https://www.iconfont.cn/collections/detail?cid=42993",
+    "icon_id": 33997773,
+    "original_name": "影音区",
+    "provider": "iconfont · 天猫好房官方图标库",
+    "sha256": "0727849820c7507ef15c2a9a3d6ffa50101209c82e57f861e1bcf2013e059208"
+  },
+  {
+    "file": "image/icon-travel.svg",
+    "source": "https://www.iconfont.cn/api/collection/detail.json?id=42993",
+    "collection": "https://www.iconfont.cn/collections/detail?cid=42993",
+    "icon_id": 33997762,
+    "original_name": "空中花园",
+    "provider": "iconfont · 天猫好房官方图标库",
+    "sha256": "c34ea4736dec2468ad3273e6424aa077ab8ff3d983cc3d1d65838e65838b1d66"
+  },
+  {
+    "file": "image/icon-fitness.svg",
+    "source": "https://www.iconfont.cn/api/collection/detail.json?id=42993",
+    "collection": "https://www.iconfont.cn/collections/detail?cid=42993",
+    "icon_id": 33997780,
+    "original_name": "健身房",
+    "provider": "iconfont · 天猫好房官方图标库",
+    "sha256": "dc885a976fa1b375580aa145244ec6e17b3a481cfa6af73448c08533f29a80e2"
+  },
+  {
+    "file": "image/icon-service.svg",
+    "source": "https://www.iconfont.cn/api/collection/detail.json?id=42993",
+    "collection": "https://www.iconfont.cn/collections/detail?cid=42993",
+    "icon_id": 33987165,
+    "original_name": "专属顾问",
+    "provider": "iconfont · 天猫好房官方图标库",
+    "sha256": "3696585e299c173c1c327fb83010c87e99afb78122f5be7f695f09b748ecd32f"
+  },
+  {
+    "file": "image/icon-shield.svg",
+    "source": "https://www.iconfont.cn/api/collection/detail.json?id=42993",
+    "collection": "https://www.iconfont.cn/collections/detail?cid=42993",
+    "icon_id": 33986995,
+    "original_name": "安全保障",
+    "provider": "iconfont · 天猫好房官方图标库",
+    "sha256": "223a426ef8e3a6b9a0973c90e413a72a4b4418c9371037190b63c2cfdadee2f9"
+  },
+  {
+    "file": "image/icon-order.svg",
+    "source": "https://www.iconfont.cn/api/collection/detail.json?id=42993",
+    "collection": "https://www.iconfont.cn/collections/detail?cid=42993",
+    "icon_id": 33987006,
+    "original_name": "签署协议",
+    "provider": "iconfont · 天猫好房官方图标库",
+    "sha256": "46573c6930c39af7768df2acbb1b207f65f1e57997d964244d6dec802bc132b7"
+  },
+  {
+    "file": "image/icon-wifi.svg",
+    "source": "https://www.iconfont.cn/api/collection/detail.json?id=42993",
+    "collection": "https://www.iconfont.cn/collections/detail?cid=42993",
+    "icon_id": 33997758,
+    "original_name": "宽带",
+    "provider": "iconfont · 天猫好房官方图标库",
+    "sha256": "3d3546aaec2ba219c0e0785841f9fef057a424534e74b0d4506eb0d66be35faf"
+  },
+  {
+    "file": "image/icon-parking.svg",
+    "source": "https://www.iconfont.cn/api/collection/detail.json?id=42993",
+    "collection": "https://www.iconfont.cn/collections/detail?cid=42993",
+    "icon_id": 33997752,
+    "original_name": "停车场",
+    "provider": "iconfont · 天猫好房官方图标库",
+    "sha256": "f6854916fffcc2e7aca42f501d3b86e96dad1a8e77228a29297bc36066a34735"
+  }
+]

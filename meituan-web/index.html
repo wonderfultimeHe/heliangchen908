@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="何良辰的美团网页版课程设计，发现城市美食、酒店和周边游。"
+    />
+    <title>美团 · 首页 | 24001010908 何良辰</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/app.js"></script>
+    <link rel="stylesheet" href="css/hlc-bottom-nav.css">
+    <script defer src="js/hlc-bottom-nav.js"></script>
+  </head>
+  <body data-page="index">
+    <!-- 何良辰 24001010908：语义化结构，布局统一使用 he_ 前缀。 --><a
+      href="#he_main"
+      class="he_skip_link"
+      >跳到主要内容</a
+    >
+    <div class="he_topbar">
+      <div class="he_container he_topbar_inner">
+        <div class="he_city_control">
+          <img src="image/icon-location.svg" alt="" /><span data-current-city
+            >大连</span
+          ><button data-city-open>切换城市</button
+          ><span class="he_top_hint">[ 城市生活指南 ]</span>
+          <div class="he_city_popover" data-city-popover hidden>
+            <strong>选择城市</strong>
+            <div>
+              <button data-city="大连">大连</button
+              ><button data-city="北京">北京</button
+              ><button data-city="上海">上海</button
+              ><button data-city="成都">成都</button
+              ><button data-city="杭州">杭州</button>
+            </div>
+            <small>当前商品为大连课程演示内容</small>
+          </div>
+        </div>
+        <div class="he_toplinks">
+          <a href="profile.html">我的美团</a><a href="orders.html">我的订单</a
+          ><a href="admin.html">商家中心</a>
+        </div>
+      </div>
+    </div>
+    <header class="he_header">
+      <div class="he_container he_header_inner">
+        <a href="index.html" class="he_brand" aria-label="美团首页"
+          ><strong>美团</strong><span>美好生活小帮手</span></a
+        >
+        <div class="he_search_area">
+          <form class="he_search" action="food.html">
+            <input
+              name="q"
+              aria-label="搜索商家或美食"
+              placeholder="搜索商家、美食、酒店"
+              maxlength="60"
+            /><button type="submit" aria-label="搜索">搜索</button>
+          </form>
+          <div class="he_hotwords">
+            <a href="food.html?category=烤肉">人气烤肉</a
+            ><a href="food.html?category=甜点饮品">下午茶</a
+            ><a href="hotels.html">周末酒店</a
+            ><a href="travel.html">周边好去处</a>
+          </div>
+        </div>
+        <div class="he_header_slogan">吃喝玩乐<span>都在美团</span></div>
+      </div>
+      <nav class="he_main_nav he_container" aria-label="主导航">
+        <a href="index.html" data-nav="index">首页</a
+        ><a href="food.html" data-nav="food">美食团购</a
+        ><a href="hotels.html" data-nav="hotels">酒店住宿</a
+        ><a href="travel.html" data-nav="travel">周边游</a
+        ><a href="profile.html" data-nav="profile">我的美团</a
+        ><a href="orders.html" data-nav="orders">我的订单</a>
+      </nav>
+    </header>
+    <main class="he_container he_main" id="he_main">
+      <section class="he_hero" aria-label="精选服务">
+        <aside class="he_categories">
+          <h2>全部分类</h2>
+          <a href="food.html"
+            ><img src="image/icon-food.svg" alt="" />美食
+            <span>火锅 / 烤肉 / 自助餐</span> ›</a
+          ><a href="food.html?category=小吃快餐"
+            ><img src="image/icon-shop.svg" alt="" />外卖
+            <span>快餐 / 便当</span> ›</a
+          ><a href="hotels.html"
+            ><img src="image/icon-bed.svg" alt="" />酒店住宿
+            <span>酒店 / 民宿</span> ›</a
+          ><a href="travel.html"
+            ><img src="image/icon-travel.svg" alt="" />周边游
+            <span>景点 / 亲子</span> ›</a
+          ><a href="travel.html?category=城市观光"
+            ><img src="image/icon-film.svg" alt="" />休闲娱乐
+            <span>城市 / 体验</span> ›</a
+          ><a href="travel.html?category=自然风光"
+            ><img src="image/icon-fitness.svg" alt="" />运动户外
+            <span>徒步 / 自然</span> ›</a
+          ><a href="food.html?category=甜点饮品"
+            ><img src="image/icon-food.svg" alt="" />甜点饮品
+            <span>咖啡 / 下午茶</span> ›</a
+          ><a href="profile.html"
+            ><img src="image/icon-service.svg" alt="" />生活服务
+            <span>我的收藏</span> ›</a
+          >
+        </aside>
+        <div class="he_hero_center">
+          <div class="he_carousel" data-carousel>
+            <div class="he_carousel_loading">正在发现城市好生活…</div>
+          </div>
+          <div class="he_mini_promos">
+            <a href="food.html?category=甜点饮品" class="he_mini_promo"
+              ><div>
+                <small>给生活加点甜</small>
+                <h3>午后，慢一点</h3>
+                <span>探索甜点饮品 →</span>
+              </div>
+              <img src="image/food-dessert.jpg" alt="水果甜品" /></a
+            ><a href="hotels.html" class="he_mini_promo"
+              ><div>
+                <small>住得好，玩得好</small>
+                <h3>下一站，舒适</h3>
+                <span>精选人气酒店 →</span>
+              </div>
+              <img src="image/hotel-room.jpg" alt="明亮舒适的酒店房间"
+            /></a>
+          </div>
+        </div>
+        <aside class="he_welcome">
+          <div class="he_avatar">
+            <img src="image/icon-user.svg" alt="用户头像" />
+          </div>
+          <h3>Hi，欢迎来到美团</h3>
+          <p>发现身边的美好生活</p>
+          <a class="he_button" href="profile.html">进入我的美团</a
+          ><a class="he_button he_button_outline" href="orders.html"
+            >查看我的订单</a
+          >
+          <div class="he_welcome_bottom">
+            <strong>吃喝玩乐，一站发现</strong>
+            <div><span>品质好店</span><span>安心体验</span></div>
+            <small>美团 · 大连生活指南</small>
+          </div>
+        </aside>
+      </section>
+      <section class="he_section">
+        <div class="he_section_header he_gold_header">
+          <h2>有格调</h2>
+          <div class="he_tabs" data-home-tabs>
+            <button class="he_active" data-category="全部">全部</button
+            ><button data-category="西餐">约会聚餐</button
+            ><button data-category="甜点饮品">丽人下午茶</button
+            ><button data-category="烤肉">朋友聚会</button>
+          </div>
+          <a href="food.html">全部好店 ›</a>
+        </div>
+        <div class="he_card_grid he_three_columns" data-home-featured></div>
+      </section>
+      <section class="he_section">
+        <div class="he_section_header he_blue_header">
+          <h2>推荐民宿</h2>
+          <span>住进生活里的小美好</span><a href="hotels.html">更多住宿 ›</a>
+        </div>
+        <div class="he_card_grid he_four_columns" data-home-hotels></div>
+      </section>
+      <section class="he_section">
+        <div class="he_section_header he_yellow_header">
+          <h2>猜你喜欢</h2>
+          <span>为你精选，城市好味道</span><a href="food.html">更多推荐 ›</a>
+        </div>
+        <div class="he_card_grid he_five_columns" data-home-recommend></div>
+      </section>
+    </main>
+    <footer class="he_footer">
+      <div class="he_container">
+        <div class="he_footer_columns">
+          <div>
+            <a href="index.html" class="he_footer_logo">美团</a>
+            <p>帮大家吃得更好，生活更好</p>
+          </div>
+          <div>
+            <h4>发现生活</h4>
+            <a href="food.html">美食团购</a><a href="hotels.html">酒店住宿</a
+            ><a href="travel.html">周边游玩</a>
+          </div>
+          <div>
+            <h4>我的服务</h4>
+            <a href="profile.html">个人中心</a><a href="orders.html">我的订单</a
+            ><a href="profile.html#he_favorites">我的收藏</a>
+          </div>
+          <div>
+            <h4>商家服务</h4>
+            <a href="admin.html">商家管理中心</a
+            ><a href="profile.html#he_settings">个人设置</a>
+          </div>
+          <div>
+            <h4>安心生活</h4>
+            <p>发现好店 · 收藏美好<br />品质体验 · 精选推荐</p>
+          </div>
+        </div>
+        <div class="he_copyright">
+          《高级网页设计I》课程设计 · 美团网页版仿制练习<br />24001010908 何良辰
+          · 页面商品、评价与订单为演示内容，仅用于学习展示
+        </div>
+      </div>
+    </footer>
+    <button class="he_backtop" data-backtop aria-label="返回顶部" hidden>
+      ↑<span>顶部</span>
+    </button>
+    <div class="he_toast" role="status" aria-live="polite" hidden></div>
+    <dialog class="he_dialog" data-dialog></dialog>
+  </body>
+</html>

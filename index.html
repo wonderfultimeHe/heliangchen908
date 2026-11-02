@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="何良辰的《高级网页设计》课堂实践，收录 HTML 基础、自我介绍网页、层叠与继承及盒模型等课堂作品。">
+    <title>何良辰的《高级网页设计》课堂实践</title>
+    <!-- 所有样式均来自本地文件，无框架、无 CDN，离线也能打开。 -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body id="top">
+    <a class="skip-link" href="#catalog">跳到课堂目录</a>
+
+    <header class="site-header container">
+        <a class="brand" href="index.html" aria-label="何良辰的课堂实践首页">
+            <span class="brand-mark" aria-hidden="true">H<span>.</span></span>
+            <span>何良辰的课堂实践<small>WEB DESIGN / LEARNING JOURNAL</small></span>
+        </a>
+        <nav aria-label="主导航">
+            <a href="#catalog">课堂目录</a>
+            <a href="#prompt">作业提示词</a>
+            <a class="nav-about" href="self-introduction.html">认识我 <span aria-hidden="true">↗</span></a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- 首页介绍：右侧的装饰完全由 HTML 和 CSS 绘制。 -->
+        <section class="hero" aria-labelledby="page-title">
+            <div class="hero-copy">
+                <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> LEARN. BUILD. GROW.</p>
+                <p class="hero-owner">何良辰的</p>
+                <h1 id="page-title">《高级网页设计》<br><span>课堂实践</span><span class="title-dot">.</span></h1>
+                <p class="hero-description">从第一行 HTML 到一个完整页面，<br>把每一次课堂练习，写成看得见的进步。</p>
+                <a class="primary-button" href="#catalog">浏览课堂作品 <span aria-hidden="true">↓</span></a>
+                <div class="hero-meta"><span>15 个已收录模块</span><span>持续学习，陆续更新</span></div>
+            </div>
+
+            <div class="hero-art" aria-hidden="true">
+                <span class="art-star">✳</span>
+                <div class="code-window">
+                    <div class="window-bar"><span class="window-dots"><i></i><i></i><i></i></span><span>my-learning.html</span><span>↗</span></div>
+                    <div class="code-content">
+                        <p><span class="line-number">01</span><span class="code-comment">&lt;!-- 从这里，开始创造 --&gt;</span></p>
+                        <p><span class="line-number">02</span><span class="code-tag">&lt;student&gt;</span></p>
+                        <p><span class="line-number">03</span>&nbsp; 姓名：<span class="code-value">何良辰</span></p>
+                        <p><span class="line-number">04</span>&nbsp; 课程：<span class="code-value">高级网页设计</span></p>
+                        <p><span class="line-number">05</span>&nbsp; 状态：<span class="code-value">学习进行中</span></p>
+                        <p><span class="line-number">06</span><span class="code-tag">&lt;/student&gt;</span></p>
+                        <p><span class="line-number">07</span><span class="code-cursor"></span></p>
+                    </div>
+                    <div class="window-footer"><span><span class="status-dot"></span> HTML + CSS</span><span>每一次尝试，都算数。</span></div>
+                </div>
+                <span class="art-note">小小的页面，大大的好奇心。</span>
+            </div>
+        </section>
+
+        <!-- 课堂目录：增加新模块时，复制一个 course-item 并修改链接和介绍。 -->
+        <section class="catalog" id="catalog" aria-labelledby="catalog-title">
+            <div class="section-heading">
+                <div><p class="eyebrow">THE CLASSROOM COLLECTION</p><h2 id="catalog-title">我的课堂目录<span class="heading-dot"> /</span></h2></div>
+                <p>一步一个脚印，一页一份收获。</p>
+            </div>
+
+            <ul class="course-grid">
+                <li class="course-item">
+                    <a class="course-card" href="meituan-web/image-solution/index.html">
+                        <div class="course-top"><span class="course-icon html-icon" aria-hidden="true">◈</span><span class="course-status">已收录</span></div>
+                        <p class="course-number">IMAGE SOLUTION</p>
+                        <h3>美团图像解决方案</h3>
+                        <p class="course-description">用字体图标与 SVG 实现自适应底部导航，查看图标、源码与实际运行效果。</p>
+                        <div class="tags"><span>字体图标</span><span>SVG</span><span>响应式导航</span></div>
+                        <div class="course-bottom"><span>打开实验项目</span><span class="arrow" aria-hidden="true">↗</span></div>
+                    </a>
+                </li>
+                <li class="course-item">
+                    <a class="course-card" href="01.html">
+                        <div class="course-top"><span class="course-icon html-icon" aria-hidden="true">&lt;/&gt;</span><span class="course-status">已收录</span></div>
+                        <p class="course-number">LESSON 01</p>
+                        <h3>HTML 基础</h3>
+                        <p class="course-description">从标签认识网页，练习标题、段落、链接、图片、列表、表格与表单。</p>
+                        <div class="tags"><span>基础标签</span><span>页面结构</span></div>
+                        <div class="course-bottom"><span>打开课堂练习</span><span class="arrow" aria-hidden="true">↗</span></div>
+                    </a>
+                </li>
+                <li class="course-item">
+                    <a class="course-card" href="self-introduction.html">
+                        <div class="course-top"><span class="course-icon profile-icon" aria-hidden="true">H.</span><span class="course-status">已收录</span></div>
+                        <p class="course-number">LESSON 02</p>
+                        <h3>自我介绍网页</h3>
+                        <p class="course-description">用文字介绍自己，用样式表达个性。记录我的兴趣爱好与学习目标。</p>
+                        <div class="tags"><span>HTML + CSS</span><span>个人主页</span></div>
+                        <div class="course-bottom"><span>打开个人主页</span><span class="arrow" aria-hidden="true">↗</span></div>
+                    </a>
+                </li>
+                <li class="course-item">
+                    <a class="course-card" href="stack004.html">
+                        <div class="course-top"><span class="course-icon html-icon" aria-hidden="true">{ }</span><span class="course-status">已收录</span></div>
+                        <p class="course-number">LESSON 03</p>
+                        <h3>层叠与继承 + 盒模型</h3>
+                        <p class="course-description">学习 CSS 层叠、继承与选择器优先级，练习盒模型，并记录选择器通关答案。</p>
+                        <div class="tags"><span>CSS 基础</span><span>盒模型</span></div>
+                        <div class="course-bottom"><span>打开课堂练习</span><span class="arrow" aria-hidden="true">↗</span></div>
+                    </a>
+                </li>
+                <li class="course-item">
+                    <a class="course-card" href="html004.html">
+                        <div class="course-top"><span class="course-icon html-icon" aria-hidden="true">{ }</span><span class="course-status">已收录</span></div>
+                        <p class="course-number">LESSON 04</p>
+                        <h3>CSS3 选择器与动画</h3>
+                        <p class="course-description">练习 CSS3 各类选择器与 animation 动画，十二个盒子依次入场。</p>
+                        <div class="tags"><span>选择器</span><span>animation</span></div>
+                        <div class="course-bottom"><span>打开课堂练习</span><span class="arrow" aria-hidden="true">↗</span></div>
+                    </a>
+                </li>
+                <li class="course-item">
+                    <a class="course-card" href="picture_above_text.html">
+                        <div class="course-top"><span class="course-icon html-icon" aria-hidden="true">▤</span><span class="course-status">已收录</span></div>
+                        <p class="course-number">LESSON 05</p>
+                        <h3>图文排版</h3>
+                        <p class="course-description">练习图片列表排版：图下文字与图上文字两种效果。</p>
+                        <div class="tags"><span>HTML + CSS</span><span>图文列表</span></div>
+                        <div class="course-bottom"><span>打开课堂练习</span><span class="arrow" aria-hidden="true">↗</span></div>
+                    </a>
+                </li>
+                <li class="course-item">
+                    <a class="course-card" href="layout908.html">
+                        <div class="course-top"><span class="course-icon html-icon" aria-hidden="true">▦</span><span class="course-status">已收录</span></div>
+                        <p class="course-number">LESSON 06</p>
+                        <h3>网页布局</h3>
+                        <p class="course-description">用语义标签搭经典页面骨架：头部、导航、主体、侧栏与固定定位广告。</p>
+                        <div class="tags"><span>页面布局</span><span>固定定位</span></div>
+                        <div class="course-bottom"><span>打开课堂练习</span><span class="arrow" aria-hidden="true">↗</span></div>
+                    </a>
+                </li>
+                <li class="course-item">
+                    <a class="course-card" href="svg.html">
+                        <div class="course-top"><span class="course-icon html-icon" aria-hidden="true">◇</span><span class="course-status">已收录</span></div>
+                        <p class="course-number">LESSON 07</p>
+                        <h3>SVG 图标</h3>
+                        <p class="course-description">用 iconfont 的 symbol 引用 SVG 图标，组合成底部导航切换栏。</p>
+                        <div class="tags"><span>SVG</span><span>iconfont</span></div>
+                        <div class="course-bottom"><span>打开课堂练习</span><span class="arrow" aria-hidden="true">↗</span></div>
+                    </a>
+                </li>
+                <li class="course-item">
+                    <a class="course-card" href="datataye004.html">
+                        <div class="course-top"><span class="course-icon html-icon" aria-hidden="true">JS</span><span class="course-status">已收录</span></div>
+                        <p class="course-number">LESSON 08</p>
+                        <h3>JS 数据类型</h3>
+                        <p class="course-description">控制台练习变量、运算符与类型转换，并用循环打印“逢 7 过”数字网格。</p>
+                        <div class="tags"><span>JavaScript</span><span>数据类型</span></div>
+                        <div class="course-bottom"><span>打开课堂练习</span><span class="arrow" aria-hidden="true">↗</span></div>
+                    </a>
+                </li>
+                <li class="course-item">
+                    <a class="course-card" href="JS_obj_fun.html">
+                        <div class="course-top"><span class="course-icon html-icon" aria-hidden="true">ƒ</span><span class="course-status">已收录</span></div>
+                        <p class="course-number">LESSON 09</p>
+                        <h3>JS 内置对象</h3>
+                        <p class="course-description">控制台练习 Math、Date 与数组的常用方法。</p>
+                        <div class="tags"><span>JavaScript</span><span>内置对象</span></div>
+                        <div class="course-bottom"><span>打开课堂练习</span><span class="arrow" aria-hidden="true">↗</span></div>
+                    </a>
+                </li>
+                <li class="course-item">
+                    <a class="course-card" href="iconfont-1.html">
+                        <div class="course-top"><span class="course-icon profile-icon" aria-hidden="true">Aa</span><span class="course-status">已收录</span></div>
+                        <p class="course-number">ICON LAB 01</p>
+                        <h3>Font Awesome 字体图标</h3>
+                        <p class="course-description">以“活字打样稿”展示字体图标：字号瀑布、样字表、油墨色卡与动画。</p>
+                        <div class="tags"><span>字体图标</span><span>本地资源</span></div>
+                        <div class="course-bottom"><span>打开图标实验</span><span class="arrow" aria-hidden="true">↗</span></div>
+                    </a>
+                </li>
+                <li class="course-item">
+                    <a class="course-card" href="iconfont-2.html">
+                        <div class="course-top"><span class="course-icon profile-icon" aria-hidden="true">◇</span><span class="course-status">已收录</span></div>
+                        <p class="course-number">ICON LAB 02</p>
+                        <h3>Lucide 矢量图标</h3>
+                        <p class="course-description">以“矢量制图”展示 SVG 图标：羽毛自绘动画、笔触粗细与现场绘制。</p>
+                        <div class="tags"><span>SVG</span><span>描边</span></div>
+                        <div class="course-bottom"><span>打开图标实验</span><span class="arrow" aria-hidden="true">↗</span></div>
+                    </a>
+                </li>
+                <li class="course-item">
+                    <a class="course-card" href="tabs.html">
+                        <div class="course-top"><span class="course-icon html-icon" aria-hidden="true">⇥</span><span class="course-status">已收录</span></div>
+                        <p class="course-number">TAB COMPONENT</p>
+                        <h3>Tab 选项卡组件</h3>
+                        <p class="course-description">新闻频道选项卡：外部 js/tabs.js，事件监听驱动，多组可复用。</p>
+                        <div class="tags"><span>JavaScript</span><span>组件复用</span></div>
+                        <div class="course-bottom"><span>打开组件练习</span><span class="arrow" aria-hidden="true">↗</span></div>
+                    </a>
+                </li>
+                <li class="course-item">
+                    <a class="course-card" href="test9-tab.html">
+                        <div class="course-top"><span class="course-icon html-icon" aria-hidden="true">908</span><span class="course-status">已收录</span></div>
+                        <p class="course-number">CLASS TEST 09</p>
+                        <h3>课堂测试 · 新闻选项卡</h3>
+                        <p class="course-description">最新投诉、官方回应、追踪调查三栏切换，先清除全部选中再激活当前。</p>
+                        <div class="tags"><span>课堂测试</span><span>事件监听</span></div>
+                        <div class="course-bottom"><span>打开课堂测试</span><span class="arrow" aria-hidden="true">↗</span></div>
+                    </a>
+                </li>
+                <li class="course-item">
+                    <a class="course-card" href="meituan-web/index.html">
+                        <div class="course-top"><span class="course-icon profile-icon" aria-hidden="true">M</span><span class="course-status">已收录</span></div>
+                        <p class="course-number">MEITUAN APP</p>
+                        <h3>美团仿站应用</h3>
+                        <p class="course-description">八个页面的完整应用：首页、美食、酒店、周边游、详情、订单、个人中心与后台。</p>
+                        <div class="tags"><span>完整项目</span><span>八个页面</span></div>
+                        <div class="course-bottom"><span>打开完整项目</span><span class="arrow" aria-hidden="true">↗</span></div>
+                    </a>
+                </li>
+                <li class="course-item">
+                    <!-- 尚未创建的模块使用普通内容，不设置无效链接。 -->
+                    <div class="course-card upcoming-card">
+                        <div class="course-top"><span class="course-icon future-icon" aria-hidden="true">＋</span><span class="course-status upcoming-status">敬请期待</span></div>
+                        <p class="course-number">TO BE CONTINUED</p>
+                        <h3>下一站，继续探索</h3>
+                        <p class="course-description">其余模块将随课程进度陆续加入，在这里积累更多想法与课堂作品。</p>
+                        <div class="tags"><span>更多课堂实践</span></div>
+                        <div class="course-bottom"><span>后续模块待添加</span><span aria-hidden="true">···</span></div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- 按作业要求，在页面中保留用户提供的完整提示词。 -->
+        <section class="prompt-section" id="prompt" aria-labelledby="prompt-title">
+            <div class="prompt-heading"><span class="prompt-icon" aria-hidden="true">“</span><div><p class="eyebrow">THE STARTING POINT</p><h2 id="prompt-title">本次作业提示词</h2></div><span class="prompt-label">原文记录</span></div>
+            <blockquote class="prompt-text">\
+创建一个新页面，包括本目录下的所有网页的超链接，使用原生代码，不使用cdn，新页面名称为index.html，主题为何良辰的《高级网页设计》课堂实践，美化页面，课堂目录中包含HTML基础、自我介绍网页、其余模块后续在增加。页面中包括本提示词。</blockquote>
+            <p class="prompt-note">从一个想法出发，用代码完成它。</p>
+        </section>
+    </main>
+
+    <footer class="site-footer container">
+        <p><strong>何良辰</strong> <span>·</span> 《高级网页设计》课堂实践</p>
+        <div><a href="index.html" aria-current="page">课堂首页</a><a href="#top">回到顶部 ↑</a></div>
+    </footer>
+</body>
+</html>

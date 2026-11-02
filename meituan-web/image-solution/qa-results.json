@@ -1,0 +1,355 @@
+{
+  "date": "2026-10-27",
+  "results": [
+    {
+      "browser": "chromium",
+      "version": "149.0.7827.55",
+      "width": 320,
+      "height": 844,
+      "mode": "font",
+      "overflow": false,
+      "navLeft": 0,
+      "navRight": 320,
+      "navBottom": 844,
+      "items": [
+        60.796875,
+        60.8125,
+        60.796875,
+        60.796875,
+        60.796875
+      ],
+      "font": true,
+      "svgCount": 0,
+      "checks": "width/fixed/equal/font-or-svg/scroll/content-clear/link/state-preservation PASS"
+    },
+    {
+      "browser": "chromium",
+      "version": "149.0.7827.55",
+      "width": 320,
+      "height": 844,
+      "mode": "svg",
+      "overflow": false,
+      "navLeft": 0,
+      "navRight": 320,
+      "navBottom": 844,
+      "items": [
+        60.796875,
+        60.8125,
+        60.796875,
+        60.796875,
+        60.796875
+      ],
+      "font": false,
+      "svgCount": 5,
+      "checks": "width/fixed/equal/font-or-svg/scroll/content-clear/link/state-preservation PASS"
+    },
+    {
+      "browser": "chromium",
+      "version": "149.0.7827.55",
+      "width": 390,
+      "height": 844,
+      "mode": "font",
+      "overflow": false,
+      "navLeft": 0,
+      "navRight": 390,
+      "navBottom": 844,
+      "items": [
+        74.796875,
+        74.8125,
+        74.796875,
+        74.796875,
+        74.796875
+      ],
+      "font": true,
+      "svgCount": 0,
+      "checks": "width/fixed/equal/font-or-svg/scroll/content-clear/link/state-preservation PASS"
+    },
+    {
+      "browser": "chromium",
+      "version": "149.0.7827.55",
+      "width": 390,
+      "height": 844,
+      "mode": "svg",
+      "overflow": false,
+      "navLeft": 0,
+      "navRight": 390,
+      "navBottom": 844,
+      "items": [
+        74.796875,
+        74.8125,
+        74.796875,
+        74.796875,
+        74.796875
+      ],
+      "font": false,
+      "svgCount": 5,
+      "checks": "width/fixed/equal/font-or-svg/scroll/content-clear/link/state-preservation PASS"
+    },
+    {
+      "browser": "chromium",
+      "version": "149.0.7827.55",
+      "width": 768,
+      "height": 960,
+      "mode": "font",
+      "overflow": false,
+      "navLeft": 0,
+      "navRight": 768,
+      "navBottom": 960,
+      "items": [
+        150.390625,
+        150.40625,
+        150.390625,
+        150.40625,
+        150.40625
+      ],
+      "font": true,
+      "svgCount": 0,
+      "checks": "width/fixed/equal/font-or-svg/scroll/content-clear/link/state-preservation PASS"
+    },
+    {
+      "browser": "chromium",
+      "version": "149.0.7827.55",
+      "width": 768,
+      "height": 960,
+      "mode": "svg",
+      "overflow": false,
+      "navLeft": 0,
+      "navRight": 768,
+      "navBottom": 960,
+      "items": [
+        150.390625,
+        150.40625,
+        150.390625,
+        150.40625,
+        150.40625
+      ],
+      "font": false,
+      "svgCount": 5,
+      "checks": "width/fixed/equal/font-or-svg/scroll/content-clear/link/state-preservation PASS"
+    },
+    {
+      "browser": "chromium",
+      "version": "149.0.7827.55",
+      "width": 1440,
+      "height": 960,
+      "mode": "font",
+      "overflow": false,
+      "navLeft": 0,
+      "navRight": 1440,
+      "navBottom": 960,
+      "items": [
+        284.796875,
+        284.8125,
+        284.796875,
+        284.796875,
+        284.796875
+      ],
+      "font": true,
+      "svgCount": 0,
+      "checks": "width/fixed/equal/font-or-svg/scroll/content-clear/link/state-preservation PASS"
+    },
+    {
+      "browser": "chromium",
+      "version": "149.0.7827.55",
+      "width": 1440,
+      "height": 960,
+      "mode": "svg",
+      "overflow": false,
+      "navLeft": 0,
+      "navRight": 1440,
+      "navBottom": 960,
+      "items": [
+        284.796875,
+        284.8125,
+        284.796875,
+        284.796875,
+        284.796875
+      ],
+      "font": false,
+      "svgCount": 5,
+      "checks": "width/fixed/equal/font-or-svg/scroll/content-clear/link/state-preservation PASS"
+    },
+    {
+      "browser": "chromium",
+      "integration": "8 existing pages PASS; desktop hidden PASS; invalid query fallback PASS; keyboard PASS",
+      "errors": [],
+      "failures": [],
+      "external": []
+    },
+    {
+      "browser": "edge",
+      "version": "156.0.4314.42",
+      "width": 320,
+      "height": 844,
+      "mode": "font",
+      "overflow": false,
+      "navLeft": 0,
+      "navRight": 320,
+      "navBottom": 844,
+      "items": [
+        60.796875,
+        60.8125,
+        60.796875,
+        60.796875,
+        60.796875
+      ],
+      "font": true,
+      "svgCount": 0,
+      "checks": "width/fixed/equal/font-or-svg/scroll/content-clear/link/state-preservation PASS"
+    },
+    {
+      "browser": "edge",
+      "version": "156.0.4314.42",
+      "width": 320,
+      "height": 844,
+      "mode": "svg",
+      "overflow": false,
+      "navLeft": 0,
+      "navRight": 320,
+      "navBottom": 844,
+      "items": [
+        60.796875,
+        60.8125,
+        60.796875,
+        60.796875,
+        60.796875
+      ],
+      "font": false,
+      "svgCount": 5,
+      "checks": "width/fixed/equal/font-or-svg/scroll/content-clear/link/state-preservation PASS"
+    },
+    {
+      "browser": "edge",
+      "version": "156.0.4314.42",
+      "width": 390,
+      "height": 844,
+      "mode": "font",
+      "overflow": false,
+      "navLeft": 0,
+      "navRight": 390,
+      "navBottom": 844,
+      "items": [
+        74.796875,
+        74.8125,
+        74.796875,
+        74.796875,
+        74.796875
+      ],
+      "font": true,
+      "svgCount": 0,
+      "checks": "width/fixed/equal/font-or-svg/scroll/content-clear/link/state-preservation PASS"
+    },
+    {
+      "browser": "edge",
+      "version": "156.0.4314.42",
+      "width": 390,
+      "height": 844,
+      "mode": "svg",
+      "overflow": false,
+      "navLeft": 0,
+      "navRight": 390,
+      "navBottom": 844,
+      "items": [
+        74.796875,
+        74.8125,
+        74.796875,
+        74.796875,
+        74.796875
+      ],
+      "font": false,
+      "svgCount": 5,
+      "checks": "width/fixed/equal/font-or-svg/scroll/content-clear/link/state-preservation PASS"
+    },
+    {
+      "browser": "edge",
+      "version": "156.0.4314.42",
+      "width": 768,
+      "height": 960,
+      "mode": "font",
+      "overflow": false,
+      "navLeft": 0,
+      "navRight": 768,
+      "navBottom": 960,
+      "items": [
+        150.390625,
+        150.40625,
+        150.390625,
+        150.40625,
+        150.40625
+      ],
+      "font": true,
+      "svgCount": 0,
+      "checks": "width/fixed/equal/font-or-svg/scroll/content-clear/link/state-preservation PASS"
+    },
+    {
+      "browser": "edge",
+      "version": "156.0.4314.42",
+      "width": 768,
+      "height": 960,
+      "mode": "svg",
+      "overflow": false,
+      "navLeft": 0,
+      "navRight": 768,
+      "navBottom": 960,
+      "items": [
+        150.390625,
+        150.40625,
+        150.390625,
+        150.40625,
+        150.40625
+      ],
+      "font": false,
+      "svgCount": 5,
+      "checks": "width/fixed/equal/font-or-svg/scroll/content-clear/link/state-preservation PASS"
+    },
+    {
+      "browser": "edge",
+      "version": "156.0.4314.42",
+      "width": 1440,
+      "height": 960,
+      "mode": "font",
+      "overflow": false,
+      "navLeft": 0,
+      "navRight": 1440,
+      "navBottom": 960,
+      "items": [
+        284.796875,
+        284.8125,
+        284.796875,
+        284.796875,
+        284.796875
+      ],
+      "font": true,
+      "svgCount": 0,
+      "checks": "width/fixed/equal/font-or-svg/scroll/content-clear/link/state-preservation PASS"
+    },
+    {
+      "browser": "edge",
+      "version": "156.0.4314.42",
+      "width": 1440,
+      "height": 960,
+      "mode": "svg",
+      "overflow": false,
+      "navLeft": 0,
+      "navRight": 1440,
+      "navBottom": 960,
+      "items": [
+        284.796875,
+        284.8125,
+        284.796875,
+        284.796875,
+        284.796875
+      ],
+      "font": false,
+      "svgCount": 5,
+      "checks": "width/fixed/equal/font-or-svg/scroll/content-clear/link/state-preservation PASS"
+    },
+    {
+      "browser": "edge",
+      "integration": "8 existing pages PASS; desktop hidden PASS; invalid query fallback PASS; keyboard PASS",
+      "errors": [],
+      "failures": [],
+      "external": []
+    }
+  ]
+}

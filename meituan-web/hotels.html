@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="何良辰的美团网页版课程设计，发现城市美食、酒店和周边游。"
+    />
+    <title>美团 · 酒店住宿 | 24001010908 何良辰</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/app.js"></script>
+    <link rel="stylesheet" href="css/hlc-bottom-nav.css">
+    <script defer src="js/hlc-bottom-nav.js"></script>
+  </head>
+  <body data-page="hotels">
+    <!-- 何良辰 24001010908：语义化结构，布局统一使用 he_ 前缀。 --><a
+      href="#he_main"
+      class="he_skip_link"
+      >跳到主要内容</a
+    >
+    <div class="he_topbar">
+      <div class="he_container he_topbar_inner">
+        <div class="he_city_control">
+          <img src="image/icon-location.svg" alt="" /><span data-current-city
+            >大连</span
+          ><button data-city-open>切换城市</button
+          ><span class="he_top_hint">[ 城市生活指南 ]</span>
+          <div class="he_city_popover" data-city-popover hidden>
+            <strong>选择城市</strong>
+            <div>
+              <button data-city="大连">大连</button
+              ><button data-city="北京">北京</button
+              ><button data-city="上海">上海</button
+              ><button data-city="成都">成都</button
+              ><button data-city="杭州">杭州</button>
+            </div>
+            <small>当前商品为大连课程演示内容</small>
+          </div>
+        </div>
+        <div class="he_toplinks">
+          <a href="profile.html">我的美团</a><a href="orders.html">我的订单</a
+          ><a href="admin.html">商家中心</a>
+        </div>
+      </div>
+    </div>
+    <header class="he_header">
+      <div class="he_container he_header_inner">
+        <a href="index.html" class="he_brand" aria-label="美团首页"
+          ><strong>美团</strong><span>美好生活小帮手</span></a
+        >
+        <div class="he_search_area">
+          <form class="he_search" action="food.html">
+            <input
+              name="q"
+              aria-label="搜索商家或美食"
+              placeholder="搜索商家、美食、酒店"
+              maxlength="60"
+            /><button type="submit" aria-label="搜索">搜索</button>
+          </form>
+          <div class="he_hotwords">
+            <a href="food.html?category=烤肉">人气烤肉</a
+            ><a href="food.html?category=甜点饮品">下午茶</a
+            ><a href="hotels.html">周末酒店</a
+            ><a href="travel.html">周边好去处</a>
+          </div>
+        </div>
+        <div class="he_header_slogan">吃喝玩乐<span>都在美团</span></div>
+      </div>
+      <nav class="he_main_nav he_container" aria-label="主导航">
+        <a href="index.html" data-nav="index">首页</a
+        ><a href="food.html" data-nav="food">美食团购</a
+        ><a href="hotels.html" data-nav="hotels">酒店住宿</a
+        ><a href="travel.html" data-nav="travel">周边游</a
+        ><a href="profile.html" data-nav="profile">我的美团</a
+        ><a href="orders.html" data-nav="orders">我的订单</a>
+      </nav>
+    </header>
+    <main class="he_container he_main" id="he_main">
+      <section class="he_destination_hero he_hotel_hero">
+        <img src="image/hotel-pool.jpg" alt="度假酒店泳池" />
+        <div>
+          <span class="he_eyebrow">STAY A LITTLE LONGER</span>
+          <h1>好好住，慢慢享受</h1>
+          <p>精选酒店与民宿，找到你的旅途归处。</p>
+        </div>
+      </section>
+      <form class="he_hotel_search" data-hotel-search>
+        <label
+          >目的地<select name="area">
+            <option value="全部">大连 · 全部区域</option>
+            <option>星海广场</option>
+            <option>滨海路</option>
+            <option>金石滩</option>
+            <option>高新园区</option>
+          </select></label
+        ><label>入住日期<input name="checkin" type="date" required /></label
+        ><label>离店日期<input name="checkout" type="date" required /></label
+        ><label
+          >入住人数<select name="guests">
+            <option value="1">1位成人</option>
+            <option value="2" selected>2位成人</option>
+          </select></label
+        ><button class="he_button" type="submit">查找酒店</button>
+      </form>
+      <div class="he_heading">
+        <div>
+          <h2>为你精选的舒适好住处</h2>
+          <p data-hotel-summary>从城市中心到海岸边，总有一间适合你。</p>
+        </div>
+        <select aria-label="酒店排序" data-hotel-sort>
+          <option value="default">推荐排序</option>
+          <option value="price">价格从低到高</option>
+          <option value="rating">评分从高到低</option>
+        </select>
+      </div>
+      <div
+        class="he_card_grid he_four_columns he_standalone_grid"
+        data-hotel-list
+      ></div>
+      <section class="he_trust_strip">
+        <div>
+          <img src="image/icon-shield.svg" alt="" /><strong>住得安心</strong>
+          <p>预订规则清晰可见</p>
+        </div>
+        <div>
+          <img src="image/icon-wifi.svg" alt="" /><strong>舒适体验</strong>
+          <p>精选实用住宿设施</p>
+        </div>
+        <div>
+          <img src="image/icon-service.svg" alt="" /><strong>贴心服务</strong>
+          <p>好旅程，从好住处开始</p>
+        </div>
+      </section>
+    </main>
+    <footer class="he_footer">
+      <div class="he_container">
+        <div class="he_footer_columns">
+          <div>
+            <a href="index.html" class="he_footer_logo">美团</a>
+            <p>帮大家吃得更好，生活更好</p>
+          </div>
+          <div>
+            <h4>发现生活</h4>
+            <a href="food.html">美食团购</a><a href="hotels.html">酒店住宿</a
+            ><a href="travel.html">周边游玩</a>
+          </div>
+          <div>
+            <h4>我的服务</h4>
+            <a href="profile.html">个人中心</a><a href="orders.html">我的订单</a
+            ><a href="profile.html#he_favorites">我的收藏</a>
+          </div>
+          <div>
+            <h4>商家服务</h4>
+            <a href="admin.html">商家管理中心</a
+            ><a href="profile.html#he_settings">个人设置</a>
+          </div>
+          <div>
+            <h4>安心生活</h4>
+            <p>发现好店 · 收藏美好<br />品质体验 · 精选推荐</p>
+          </div>
+        </div>
+        <div class="he_copyright">
+          《高级网页设计I》课程设计 · 美团网页版仿制练习<br />24001010908 何良辰
+          · 页面商品、评价与订单为演示内容，仅用于学习展示
+        </div>
+      </div>
+    </footer>
+    <button class="he_backtop" data-backtop aria-label="返回顶部" hidden>
+      ↑<span>顶部</span>
+    </button>
+    <div class="he_toast" role="status" aria-live="polite" hidden></div>
+    <dialog class="he_dialog" data-dialog></dialog>
+  </body>
+</html>

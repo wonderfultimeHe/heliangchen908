@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>何良辰的自我介绍</title>
+    <!-- HTML 负责内容，外部 CSS 文件负责页面样式。 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 修改提示：可以继续修改班级、爱好和介绍文字。 -->
+    <header class="site-header">
+        <a class="logo" href="#home">何良辰的个人主页<span> / ABOUT ME</span></a>
+        <nav aria-label="页面导航">
+            <a href="index.html">课堂目录</a>
+            <a href="#about">关于我</a>
+            <a href="#hobbies">我的爱好</a>
+            <a href="#goals">学习目标</a>
+        </nav>
+    </header>
+
+    <main id="home">
+        <!-- 第一部分：自我介绍。 -->
+        <section class="intro" id="about" aria-labelledby="intro-title">
+            <div class="intro-text">
+                <p class="eyebrow">很高兴在这里认识你</p>
+                <h1 id="intro-title">你好，<br>我是<span>何良辰。</span></h1>
+                <p class="description">一名热爱生活、喜欢探索的学生。我喜欢在阅读中发现新的世界，在运动中收获快乐，也喜欢动手尝试新鲜事物。</p>
+                <p class="description">这是我用 HTML 和 CSS 制作的个人主页。希望通过这个小小的页面，让你多了解我一点。</p>
+                <a class="button" href="#hobbies">认识更多面的我 <span aria-hidden="true">↗</span></a>
+            </div>
+
+            <aside class="profile-card" aria-label="个人资料卡">
+                <p class="card-label">MY PROFILE <span>01</span></p>
+                <!-- 这里用文字作为头像，也可以换成自己的照片。 -->
+                <div class="avatar" aria-hidden="true">何</div>
+                <h2>何良辰</h2>
+                <p class="profile-caption">保持好奇，慢慢成长。</p>
+                <dl class="profile-info">
+                    <div><dt>身份</dt><dd>在校学生</dd></div>
+                    <div><dt>班级</dt><dd>一年级 1 班</dd></div>
+                    <div><dt>性格</dt><dd>乐观、认真、友善</dd></div>
+                </dl>
+                <p class="profile-note"><span aria-hidden="true">✦</span> 每一天，都有一点新收获</p>
+            </aside>
+        </section>
+
+        <!-- 第二部分：兴趣爱好，使用列表展示。 -->
+        <section class="hobbies section" id="hobbies" aria-labelledby="hobbies-title">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">THE THINGS I LOVE</p>
+                    <h2 id="hobbies-title">生活里的小热爱</h2>
+                </div>
+                <p>课本之外，也有属于我的精彩。</p>
+            </div>
+            <ul class="hobby-list">
+                <li class="hobby-card">
+                    <span class="hobby-number">01 / READING</span>
+                    <h3>阅读</h3>
+                    <p>喜欢在安静的午后翻开一本书，在文字里认识不同的人，发现不一样的世界。</p>
+                    <span class="tag">与文字做朋友</span>
+                </li>
+                <li class="hobby-card">
+                    <span class="hobby-number">02 / SPORTS</span>
+                    <h3>运动</h3>
+                    <p>喜欢跑步，也喜欢和朋友一起打球。流一点汗，让身体和心情都充满能量。</p>
+                    <span class="tag">给生活充点电</span>
+                </li>
+                <li class="hobby-card">
+                    <span class="hobby-number">03 / MUSIC</span>
+                    <h3>音乐</h3>
+                    <p>学习之余，听几首喜欢的歌。让旋律陪伴日常，记录每一个值得记住的瞬间。</p>
+                    <span class="tag">收藏日常的旋律</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- 第三部分：学习目标，使用有序列表展示。 -->
+        <section class="goals section" id="goals" aria-labelledby="goals-title">
+            <div>
+                <p class="eyebrow">ONE STEP AT A TIME</p>
+                <h2 id="goals-title">向更好的自己，<br>迈出一小步。</h2>
+                <p class="goal-description">不用一下子很厉害，每天进步一点就好。</p>
+            </div>
+            <ol class="goal-list">
+                <li><h3>认真学好基础知识</h3><p>上课认真听讲，遇到不懂的问题主动请教。</p></li>
+                <li><h3>学会制作自己的网页</h3><p>掌握 HTML 和 CSS，把想法变成看得见的作品。</p></li>
+                <li><h3>坚持阅读与运动</h3><p>合理安排时间，让学习和生活都有自己的节奏。</p></li>
+            </ol>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>何良辰的个人主页 · 用心记录，慢慢成长</p>
+        <a href="#home">回到顶部 ↑</a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,67 @@
+[
+  {
+    "file": "image/icon-home.svg",
+    "source": "https://www.iconfont.cn/api/collection/detail.json?id=42993",
+    "collection": "https://www.iconfont.cn/collections/detail?cid=42993",
+    "icon_id": 33986999,
+    "original_name": "首页-置灰",
+    "provider": "iconfont · 天猫好房官方图标库",
+    "sha256": "0d1ba7c505dbbb0f10ea35ab90162229569d13a82bf67dcbdb46df983b161b6a",
+    "local_file": "assets/home.svg",
+    "label": "首页",
+    "codepoint": "e901",
+    "processing": "保留原始路径，SVG 去除固定 fill 以使用 currentColor；同一路径转换为本地字体。"
+  },
+  {
+    "file": "image/icon-food.svg",
+    "source": "https://www.iconfont.cn/api/collection/detail.json?id=42993",
+    "collection": "https://www.iconfont.cn/collections/detail?cid=42993",
+    "icon_id": 33997770,
+    "original_name": "DIY餐吧",
+    "provider": "iconfont · 天猫好房官方图标库",
+    "sha256": "487ee737dcc640810a854cac4af719dc0d5ce6b98914ef83d2da00e313a6a909",
+    "local_file": "assets/food.svg",
+    "label": "美食",
+    "codepoint": "e902",
+    "processing": "保留原始路径，SVG 去除固定 fill 以使用 currentColor；同一路径转换为本地字体。"
+  },
+  {
+    "file": "image/icon-travel.svg",
+    "source": "https://www.iconfont.cn/api/collection/detail.json?id=42993",
+    "collection": "https://www.iconfont.cn/collections/detail?cid=42993",
+    "icon_id": 33997762,
+    "original_name": "空中花园",
+    "provider": "iconfont · 天猫好房官方图标库",
+    "sha256": "c34ea4736dec2468ad3273e6424aa077ab8ff3d983cc3d1d65838e65838b1d66",
+    "local_file": "assets/travel.svg",
+    "label": "发现",
+    "codepoint": "e903",
+    "processing": "保留原始路径，SVG 去除固定 fill 以使用 currentColor；同一路径转换为本地字体。"
+  },
+  {
+    "file": "image/icon-order.svg",
+    "source": "https://www.iconfont.cn/api/collection/detail.json?id=42993",
+    "collection": "https://www.iconfont.cn/collections/detail?cid=42993",
+    "icon_id": 33987006,
+    "original_name": "签署协议",
+    "provider": "iconfont · 天猫好房官方图标库",
+    "sha256": "46573c6930c39af7768df2acbb1b207f65f1e57997d964244d6dec802bc132b7",
+    "local_file": "assets/order.svg",
+    "label": "订单",
+    "codepoint": "e904",
+    "processing": "保留原始路径，SVG 去除固定 fill 以使用 currentColor；同一路径转换为本地字体。"
+  },
+  {
+    "file": "image/icon-user.svg",
+    "source": "https://www.iconfont.cn/api/collection/detail.json?id=42993",
+    "collection": "https://www.iconfont.cn/collections/detail?cid=42993",
+    "icon_id": 33987000,
+    "original_name": "个人中心-置灰",
+    "provider": "iconfont · 天猫好房官方图标库",
+    "sha256": "64cab889098cfbdd5fad1429c08feaee1f4c2c4fab7ae1f93e6dc0c85a8f21f9",
+    "local_file": "assets/user.svg",
+    "label": "我的",
+    "codepoint": "e905",
+    "processing": "保留原始路径，SVG 去除固定 fill 以使用 currentColor；同一路径转换为本地字体。"
+  }
+]

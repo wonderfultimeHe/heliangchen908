@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab 选项卡 · 新闻频道</title>
+    <style>
+        /* ============ 设计令牌 ============ */
+        :root {
+            --hlc_bg: #f5f6f8;        /* 页面底色 */
+            --hlc_card: #ffffff;       /* 卡片 */
+            --hlc_ink: #26282c;        /* 正文墨色 */
+            --hlc_soft: #6b6f76;       /* 辅助文字 */
+            --hlc_line: #e4e7eb;       /* 分隔线 */
+            --hlc_accent: #c0392b;     /* 新闻红 */
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--hlc_bg);
+            color: var(--hlc_ink);
+            font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+            font-size: 15px;
+            line-height: 1.7;
+            padding: 48px 20px 80px;
+        }
+
+        .hlc_wrap { max-width: 720px; margin: 0 auto; }
+
+        /* 返回首页 */
+        .hlc_back {
+            display: inline-block;
+            font-size: 13px;
+            color: var(--hlc_soft);
+            text-decoration: none;
+            margin-bottom: 18px;
+        }
+
+        .hlc_back:hover { color: var(--hlc_accent); }
+
+        h1 {
+            font-size: 26px;
+            font-weight: 600;
+        }
+
+        .hlc_hint {
+            font-size: 13px;
+            color: var(--hlc_soft);
+            margin: 6px 0 26px;
+        }
+
+        /* ============ Tab 组件结构 ============ */
+        .hlc_tabs {
+            background: var(--hlc_card);
+            border: 1px solid var(--hlc_line);
+            border-radius: 10px;
+            margin-bottom: 34px;
+            overflow: hidden;
+        }
+
+        /* 选项卡条：窄屏可横向滚动 */
+        .hlc_tab_bar {
+            display: flex;
+            border-bottom: 1px solid var(--hlc_line);
+            overflow-x: auto;
+        }
+
+        .hlc_tab_btn {
+            flex: 1 0 auto;
+            background: none;
+            border: none;
+            border-bottom: 2px solid transparent; /* 选中指示线占位，避免跳动 */
+            padding: 14px 20px;
+            font-family: inherit;
+            font-size: 15px;
+            color: var(--hlc_soft);
+            cursor: pointer;
+            white-space: nowrap;
+            transition: color 0.15s ease;
+        }
+
+        .hlc_tab_btn:hover { color: var(--hlc_ink); }
+
+        /* 选中态：文字变红 + 底部指示线 */
+        .hlc_tab_btn.hlc_active {
+            color: var(--hlc_accent);
+            font-weight: 600;
+            border-bottom-color: var(--hlc_accent);
+        }
+
+        /* 面板：默认隐藏，仅选中面板显示 */
+        .hlc_tab_panel { display: none; padding: 6px 22px 14px; }
+
+        .hlc_tab_panel.hlc_active { display: block; }
+
+        /* ============ 新闻列表 ============ */
+        .hlc_news_list { list-style: none; }
+
+        .hlc_news_list li {
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+            padding: 12px 2px;
+            border-bottom: 1px dashed var(--hlc_line);
+        }
+
+        .hlc_news_list li:last-child { border-bottom: none; }
+
+        .hlc_news_title {
+            flex: 1;
+            cursor: default;
+            transition: color 0.15s ease;
+        }
+
+        .hlc_news_list li:hover .hlc_news_title { color: var(--hlc_accent); }
+
+        .hlc_news_date {
+            font-size: 12px;
+            color: #9aa0a8;
+            font-family: Consolas, monospace;
+            flex-shrink: 0;
+        }
+
+        /* 键盘焦点 */
+        .hlc_tab_btn:focus-visible,
+        a:focus-visible {
+            outline: 2px solid var(--hlc_accent);
+            outline-offset: -2px;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="hlc_wrap">
+        <a class="hlc_back" href="index.html">← 返回首页</a>
+        <h1>新闻频道</h1>
+        <p class="hlc_hint">Tab 逻辑在外部文件 js/tabs.js，可复用；默认选中「国内新闻」</p>
+
+        <!-- ============ Tab 组一：新闻频道 ============ -->
+        <div class="hlc_tabs">
+            <div class="hlc_tab_bar">
+                <button class="hlc_tab_btn hlc_active" data-hlc-tab="#hlc_panel_national">国内新闻</button>
+                <button class="hlc_tab_btn" data-hlc-tab="#hlc_panel_province">省内新闻</button>
+                <button class="hlc_tab_btn" data-hlc-tab="#hlc_panel_world">国际新闻</button>
+                <button class="hlc_tab_btn" data-hlc-tab="#hlc_panel_hot">最热新闻</button>
+            </div>
+
+            <!-- 国内新闻（默认选中） -->
+            <div class="hlc_tab_panel hlc_active" id="hlc_panel_national">
+                <ul class="hlc_news_list">
+                    <li><span class="hlc_news_title">国产大飞机 C929 设计工作进入关键阶段</span><span class="hlc_news_date">11-02</span></li>
+                    <li><span class="hlc_news_title">全国秋粮收获过八成，全年粮食产量有望再创新高</span><span class="hlc_news_date">11-01</span></li>
+                    <li><span class="hlc_news_title">新一轮消费品以旧换新政策落地，家电销售持续升温</span><span class="hlc_news_date">10-31</span></li>
+                    <li><span class="hlc_news_title">多条高铁新线进入开通倒计时，路网密度进一步提升</span><span class="hlc_news_date">10-30</span></li>
+                </ul>
+            </div>
+
+            <!-- 省内新闻 -->
+            <div class="hlc_tab_panel" id="hlc_panel_province">
+                <ul class="hlc_news_list">
+                    <li><span class="hlc_news_title">我省发布科技创新三年行动方案，重点扶持制造业升级</span><span class="hlc_news_date">11-02</span></li>
+                    <li><span class="hlc_news_title">省内多地迎来降温降雨，农业部门提示防范晚熟作物冻害</span><span class="hlc_news_date">11-01</span></li>
+                    <li><span class="hlc_news_title">新一条城际铁路开始联调联试，通车后两市中心半小时直达</span><span class="hlc_news_date">10-29</span></li>
+                    <li><span class="hlc_news_title">全省文旅消费季启幕，百家景区推出门票优惠活动</span><span class="hlc_news_date">10-28</span></li>
+                </ul>
+            </div>
+
+            <!-- 国际新闻 -->
+            <div class="hlc_tab_panel" id="hlc_panel_world">
+                <ul class="hlc_news_list">
+                    <li><span class="hlc_news_title">联合国气候大会开幕，各方聚焦新能源转型资金安排</span><span class="hlc_news_date">11-02</span></li>
+                    <li><span class="hlc_news_title">国际油价本周震荡走低，市场关注产油国减产动向</span><span class="hlc_news_date">11-01</span></li>
+                    <li><span class="hlc_news_title">多国联合发射深空探测器，将对小行星开展采样任务</span><span class="hlc_news_date">10-30</span></li>
+                    <li><span class="hlc_news_title">全球智能手机出货量回暖，新兴市场需求显著回升</span><span class="hlc_news_date">10-28</span></li>
+                </ul>
+            </div>
+
+            <!-- 最热新闻 -->
+            <div class="hlc_tab_panel" id="hlc_panel_hot">
+                <ul class="hlc_news_list">
+                    <li><span class="hlc_news_title">热搜第一：国产芯片新突破，能效比提升三成</span><span class="hlc_news_date">11-02</span></li>
+                    <li><span class="hlc_news_title">冷空气南下话题刷屏，本周末局地降温或超十度</span><span class="hlc_news_date">11-02</span></li>
+                    <li><span class="hlc_news_title">城市马拉松本周末鸣枪，多条道路将临时交通管制</span><span class="hlc_news_date">11-01</span></li>
+                    <li><span class="hlc_news_title">年度科技榜单公布，人工智能应用占据半壁江山</span><span class="hlc_news_date">10-31</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============ Tab 组二：验证可复用 ============ -->
+        <p class="hlc_hint">同一份 js/tabs.js 再初始化一组，验证复用：</p>
+        <div class="hlc_tabs">
+            <div class="hlc_tab_bar">
+                <button class="hlc_tab_btn hlc_active" data-hlc-tab="#hlc_panel_tech">科技</button>
+                <button class="hlc_tab_btn" data-hlc-tab="#hlc_panel_sport">体育</button>
+                <button class="hlc_tab_btn" data-hlc-tab="#hlc_panel_life">生活</button>
+            </div>
+
+            <div class="hlc_tab_panel hlc_active" id="hlc_panel_tech">
+                <ul class="hlc_news_list">
+                    <li><span class="hlc_news_title">开源社区发布新版前端框架，构建速度大幅提升</span><span class="hlc_news_date">11-02</span></li>
+                    <li><span class="hlc_news_title">智能穿戴设备出货量创新高，健康监测成主流功能</span><span class="hlc_news_date">10-30</span></li>
+                </ul>
+            </div>
+            <div class="hlc_tab_panel" id="hlc_panel_sport">
+                <ul class="hlc_news_list">
+                    <li><span class="hlc_news_title">联赛收官战今晚打响，冠军悬念留到最后一轮</span><span class="hlc_news_date">11-02</span></li>
+                    <li><span class="hlc_news_title">全民健身运动会开幕，报名人数创历届之最</span><span class="hlc_news_date">10-31</span></li>
+                </ul>
+            </div>
+            <div class="hlc_tab_panel" id="hlc_panel_life">
+                <ul class="hlc_news_list">
+                    <li><span class="hlc_news_title">冬季取暖用电安全提示：取暖器切勿长时间覆盖</span><span class="hlc_news_date">11-01</span></li>
+                    <li><span class="hlc_news_title">秋冬进补正当时，营养师建议荤素搭配少油少盐</span><span class="hlc_news_date">10-29</span></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- 外部引用：可复用的 Tab 组件 -->
+    <script src="js/tabs.js"></script>
+    <script>
+        // 初始化页面上所有 .hlc_tabs 结构的选项卡
+        hlc_init_tabs('.hlc_tabs');
+    </script>
+
+</body>
+</html>

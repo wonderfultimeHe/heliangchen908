@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(Math.floor(1.9));//向下取整
+        console.log(Math.round(1.9));//四舍五入
+        console.log(Math.random());//随机数取到0-1之间
+        //0-100的整数
+        console.log(Math.floor(Math.random()*101));//floor取到整数
+        //date对象
+        var date=new Date();//创建一个date对象
+        console.log(date.getFullYear());//获取年份
+        console.log(date.getMonth());//获取月份，0-11
+        console.log(date.getDate());//获取日期，1-31
+        console.log(date.getDay());//获取星期几，0-6
+        console.log(date.getHours());//获取小时，0-23
+        console.log(date.getTime());//获取时间戳，1970年1月1日到现在的毫秒数
+        //数组
+        var arr=[1,2,3,4,5,'seven','eight'];
+        var arr1=new Array(1,2,3,4,5,'seven','eight')
+        var arr2=new Array(5);
+        console.log(arr);
+        console.log(arr1);
+        console.log(arr2);
+        
+    </script>
+</body>
+</html>

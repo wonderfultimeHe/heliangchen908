@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVG图标</title>
+    <script src="./font/iconfont.js"></script>
+    <link rel="stylesheet" href="./svg.css" />
+  </head>
+  <body>
+    <h2>SVG图标</h2>
+    <div class="tab-nav">
+      <button class="tab-item active" type="button">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-message"></use>
+        </svg>
+        <span>消息</span>
+      </button>
+      <button class="tab-item" type="button">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-switch"></use>
+        </svg>
+        <span>切换</span>
+      </button>
+      <button class="tab-item" type="button">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-close"></use>
+        </svg>
+        <span>关闭</span>
+      </button>
+      <button class="tab-item" type="button">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-wifi"></use>
+        </svg>
+        <span>wifi</span>
+      </button>
+    </div>
+    <script>
+      const items = document.querySelectorAll('.tab-item');
+      items.forEach((item) => {
+        item.addEventListener('click', () => {
+          items.forEach((tab) => tab.classList.remove('active'));
+          item.classList.add('active');
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课堂测试9 · 新闻选项卡 — 何良辰 908</title>
+    <style>
+        /* ============ 设计令牌（经典门户风） ============ */
+        :root {
+            --hlc_ink: #000000;        /* 正文黑 */
+            --hlc_soft: #888888;       /* 副标题灰 */
+            --hlc_red: #cc0000;        /* 选中红 */
+            --hlc_blue: #1e50a2;       /* 分隔蓝线 */
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #ffffff;
+            color: var(--hlc_ink);
+            font-family: "SimSun", "宋体", serif;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .hlc_wrap {
+            width: 560px;
+            max-width: 94vw;
+            margin: 56px auto 0;
+        }
+
+        /* ============ 选项卡条 ============ */
+        .hlc_tab_bar {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            padding: 0 6px 8px;
+            border-bottom: 2px solid var(--hlc_blue); /* 蓝色分隔线 */
+        }
+
+        .hlc_tab_btn {
+            font-family: "SimHei", "黑体", sans-serif;
+            font-size: 15px;
+            font-weight: bold;
+            color: var(--hlc_ink);
+            background: none;
+            border: 1px solid transparent; /* 占位，避免选中时尺寸跳动 */
+            padding: 2px 9px;
+            cursor: pointer;
+        }
+
+        .hlc_tab_btn:hover { color: var(--hlc_red); }
+
+        /* 选中态：红字 + 红色边框 */
+        .hlc_tab_btn.hlc_active {
+            color: var(--hlc_red);
+            border-color: var(--hlc_red);
+        }
+
+        .hlc_tab_btn:focus-visible {
+            outline: 2px solid var(--hlc_blue);
+            outline-offset: 2px;
+        }
+
+        /* ============ 面板与新闻列表 ============ */
+        .hlc_tab_panel { display: none; }
+
+        .hlc_tab_panel.hlc_active { display: block; }
+
+        .hlc_news_list {
+            list-style: square;               /* 方块项目符号 */
+            padding-left: 26px;
+            padding-top: 6px;
+        }
+
+        .hlc_news_list li { padding: 6px 0; }
+
+        .hlc_news_list a {
+            color: var(--hlc_ink);
+            text-decoration: none;
+        }
+
+        .hlc_news_list a:hover {
+            color: var(--hlc_red);
+            text-decoration: underline;
+        }
+
+        /* 副标题：灰色小字跟在主标题后面 */
+        .hlc_sub {
+            color: var(--hlc_soft);
+            font-size: 13px;
+            margin-left: 6px;
+        }
+
+        /* ============ 页脚署名 ============ */
+        .hlc_footer {
+            margin-top: 28px;
+            padding-top: 12px;
+            border-top: 1px dashed #cccccc;
+            font-size: 13px;
+            color: var(--hlc_soft);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .hlc_footer a { color: var(--hlc_blue); }
+    </style>
+</head>
+<body>
+
+    <div class="hlc_wrap">
+
+        <!-- ============ 选项卡组 ============ -->
+        <div class="hlc_tabs">
+            <div class="hlc_tab_bar">
+                <button class="hlc_tab_btn hlc_active" data-hlc-tab="#hlc_panel_latest">最新投诉</button>
+                <button class="hlc_tab_btn" data-hlc-tab="#hlc_panel_response">官方回应</button>
+                <button class="hlc_tab_btn" data-hlc-tab="#hlc_panel_track">追踪调查</button>
+            </div>
+
+            <!-- 最新投诉（默认选中） -->
+            <div class="hlc_tab_panel hlc_active" id="hlc_panel_latest">
+                <ul class="hlc_news_list">
+                    <li><a href="#">北京火车站出租车乱象调查</a><span class="hlc_sub">司机称计价器坏了</span></li>
+                    <li><a href="#">公园仙人掌遭刻字“毁容”</a><span class="hlc_sub">一棵仙人掌被刻</span></li>
+                    <li><a href="#">昆明屡现游客“辣手摧鸥”</a><span class="hlc_sub">网友谴责（组图）</span></li>
+                    <li><a href="#">四川一星级公厕开建1年未开放变“茶楼”</a></li>
+                    <li><a href="#">北京北海地坛公园暗藏高端会所</a><span class="hlc_sub">园方称将整治</span></li>
+                    <li><a href="#">北京北海金丝楠木柱遭英文字母“签名”破坏</a></li>
+                    <li><a href="#">北京动物园门票玩猫腻</a><span class="hlc_sub">低价门票遭“雪藏”</span></li>
+                    <li><a href="#">女子不满“无购物”投诉旅行社</a><span class="hlc_sub">称东西一样没买到</span></li>
+                    <li><a href="#">老年人参团游权益易受损</a><span class="hlc_sub">旅行社被曝对老人加价</span></li>
+                </ul>
+            </div>
+
+            <!-- 官方回应 -->
+            <div class="hlc_tab_panel" id="hlc_panel_response">
+                <ul class="hlc_news_list">
+                    <li><a href="#">“大绿鸭”、翘尾鸭凑热闹 法官解读“山寨鸭”是否侵权</a></li>
+                    <li><a href="#">国家旅游局回应涨价：“团队游价格系正常浮动”</a></li>
+                    <li><a href="#">国家旅游局回应“新旅游法实施后旅行社团队游涨价”</a></li>
+                    <li><a href="#">出游遇纠纷可依《旅游法》维权 明确旅游投诉处理机制</a></li>
+                    <li><a href="#">解读新旅游法三“谣传” 扫货族可安心</a></li>
+                    <li><a href="#">《旅游法》将抑制“零负团费”和“门票经济”</a></li>
+                    <li><a href="#">文明旅游将入旅游合同 行为指南和公约将作为附件</a></li>
+                    <li><a href="#">天津二季度旅行社服务质量发布 投诉集中在8类问题</a></li>
+                    <li><a href="#">敦煌：国家法定节假日所有景点景区免收停车费</a></li>
+                </ul>
+            </div>
+
+            <!-- 追踪调查 -->
+            <div class="hlc_tab_panel" id="hlc_panel_track">
+                <ul class="hlc_news_list">
+                    <li><a href="#">《旅游法》实施半月 自费景区遭“一日游”潜规则</a></li>
+                    <li><a href="#">追踪香格里拉旅游“怪象”：涉事导游等已被处罚</a></li>
+                    <li><a href="#">导游挣钱新“攻略”：逃离旅行社自己单干</a></li>
+                    <li><a href="#">九寨沟为何变成“死胡同”？——数千游客滞留调查</a></li>
+                    <li><a href="#">九寨沟为何仍现游客滞留？</a></li>
+                    <li><a href="#">旅游之尴尬：“膀爷”游博物馆、女士着装太暴露被劝阻</a></li>
+                    <li><a href="#">记者暗访兵马俑景区：玉器店买玉 过期门票蒙人</a></li>
+                    <li><a href="#">假冒香港游客借卡转账 两女子忽悠女大学生</a></li>
+                    <li><a href="#">39家旅游单位违法被罚1800万 购物店结盟统一涨价</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============ 页脚署名 ============ -->
+        <footer class="hlc_footer">
+            <span>姓名：何良辰 · 学号：908</span>
+            <a href="index.html">返回首页</a>
+        </footer>
+    </div>
+
+    <script>
+        /**
+         * 可复用的 Tab 选项卡组件（hlc_ 前缀规范）
+         * 结构约定：
+         *   容器 .hlc_tabs 内放按钮 .hlc_tab_btn（data-hlc-tab 指向面板id）
+         *   与面板 .hlc_tab_panel；默认选中项在 HTML 里加 hlc_active 类。
+         */
+
+        /* 初始化：给选择器匹配到的所有选项卡组绑定事件 */
+        function hlc_init_tabs(hlc_selector) {
+            var hlc_groups = document.querySelectorAll(hlc_selector);
+
+            for (var hlc_i = 0; hlc_i < hlc_groups.length; hlc_i++) {
+                hlc_bind_tab_group(hlc_groups[hlc_i]);
+            }
+        }
+
+        /* 给一组选项卡绑定事件监听 */
+        function hlc_bind_tab_group(hlc_group) {
+            var hlc_btns = hlc_group.querySelectorAll('.hlc_tab_btn');
+
+            for (var hlc_i = 0; hlc_i < hlc_btns.length; hlc_i++) {
+                // 事件监听：点击任一选项卡
+                hlc_btns[hlc_i].addEventListener('click', function () {
+                    hlc_select_tab(hlc_group, this);
+                });
+            }
+        }
+
+        /* 切换选中状态：先清除所有，再设置当前 */
+        function hlc_select_tab(hlc_group, hlc_current_btn) {
+            // 第一步：清除所有选项卡的选中状态
+            var hlc_btns = hlc_group.querySelectorAll('.hlc_tab_btn');
+            for (var hlc_i = 0; hlc_i < hlc_btns.length; hlc_i++) {
+                hlc_btns[hlc_i].classList.remove('hlc_active');
+            }
+
+            // 同时隐藏所有面板
+            var hlc_panels = hlc_group.querySelectorAll('.hlc_tab_panel');
+            for (var hlc_j = 0; hlc_j < hlc_panels.length; hlc_j++) {
+                hlc_panels[hlc_j].classList.remove('hlc_active');
+            }
+
+            // 第二步：设置当前元素的选中状态
+            hlc_current_btn.classList.add('hlc_active');
+
+            // 显示 data-hlc-tab 指向的面板
+            var hlc_panel = hlc_group.querySelector(hlc_current_btn.getAttribute('data-hlc-tab'));
+            if (hlc_panel) {
+                hlc_panel.classList.add('hlc_active');
+            }
+        }
+
+        // 页面加载后初始化
+        hlc_init_tabs('.hlc_tabs');
+    </script>
+
+</body>
+</html>

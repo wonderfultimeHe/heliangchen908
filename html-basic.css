@@ -1,0 +1,29 @@
+
+        /*全局CSS样式*/
+        *{ 
+
+            margin: 0;/*外边距*/
+            padding: 0;/*内边距*/
+        }
+        ul{
+            list-style: none;/*取消列表的默认样式*/
+            
+        }
+        a{
+            text-decoration: none;/*取消超链接的下划线*/
+            color: black;/*取消超链接的颜色*/
+        }
+        /*img比较特殊是行内块元素，可以设置宽高，边框等属性*/
+        img{
+            border: none;/*取消图片的默认边框*/
+            display: block;/*图片默认是行内元素，需要设置为块级元素*/
+        }
+        .title-demo{
+            color: red;
+            background: yellow;
+            padding: 10px 20px 30px 40px;
+            border: 1px solid black;
+            margin: 10px 20px 30px 40px; 
+        }
+        
+        /*Css选择器：标签选择器（一般全局css用）类选择器*/

@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*标签选择器*/
+body{
+    color: white;
+    font-size: 40px;
+}/*id选择器*/
+#header{
+    min-width: 120px;
+    height: 90px;
+    background-color: rgb(45, 23, 225);
+    position: relative;
+}
+nav{
+    height: 60px;
+    background-color: #0f0;
+    margin-bottom: 20px;
+}
+/*类选择器*/
+.wrap{
+    width:1200px;
+    margin: 0 auto;
+}
+.content-row{
+    display: flex;
+    gap: 20px;
+}
+main{
+    background-color: rgb(225, 0, 0);
+    height: 3000px;
+    width: 780px;
+}
+aside{
+    background-color: rgb(0, 225, 225);
+    height: 3000px;
+    width: 400px;
+}
+footer{
+    background-color: rgb(225, 225, 0);
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    font-size: 20px;
+}
+.fixed-ad{
+    position: fixed;
+    bottom: 0%;
+    right: 0%;
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+    
+
+    z-index: 999;
+
+    background-color: rgb(255, 0, 255);
+}
+.logo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90px;
+    height: 90px;
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "title": "好好吃饭，好好生活",
+    "subtitle": "发现身边好味道 / 双人好餐 88 元起",
+    "image": "image/food-bbq.jpg",
+    "url": "food.html",
+    "label": "美食好时光"
+  },
+  {
+    "title": "住进风景，放松一下",
+    "subtitle": "精选品质酒店 / 给自己一个舒适假期",
+    "image": "image/hotel-pool.jpg",
+    "url": "hotels.html",
+    "label": "旅行慢一点"
+  },
+  {
+    "title": "周末出发，去看海吧",
+    "subtitle": "城市周边好去处 / 把日常过成小假期",
+    "image": "image/travel-coast.jpg",
+    "url": "travel.html",
+    "label": "周边游灵感"
+  }
+]

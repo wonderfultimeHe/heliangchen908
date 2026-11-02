@@ -1,0 +1,5 @@
+# 本地运行产生的日志与缓存
+*.log
+__pycache__/
+.DS_Store
+Thumbs.db

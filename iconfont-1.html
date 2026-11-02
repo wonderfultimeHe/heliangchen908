@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Awesome 字体图标 · 活字打样稿</title>
+    <!-- 引入本地下载的 Font Awesome CSS -->
+    <link rel="stylesheet" href="cdn/css/all.min.css">
+    <style>
+        /* ============ 设计令牌：印刷打样稿 ============ */
+        :root {
+            --hlc_paper: #f7f4ed;      /* 纸 */
+            --hlc_ink: #29241d;        /* 油墨 */
+            --hlc_graphite: #6e675e;   /* 石墨灰（辅助文字） */
+            --hlc_stamp: #bf3b2b;      /* 打样红 */
+            --hlc_blue: #7fa8a4;       /* 描图蓝（校对蓝） */
+            --hlc_rule: #dcd5c6;       /* 规线 */
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--hlc_paper);
+            color: var(--hlc_ink);
+            font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+            font-size: 15px;
+            line-height: 1.75;
+            padding: 56px 20px 72px;
+        }
+
+        .hlc_sheet { max-width: 840px; margin: 0 auto; }
+
+        a:focus-visible, button:focus-visible {
+            outline: 2px solid var(--hlc_stamp);
+            outline-offset: 3px;
+        }
+
+        /* ============ 版头：打样稿刊头 ============ */
+        .hlc_masthead {
+            padding-bottom: 40px;
+            border-bottom: 2px solid var(--hlc_ink);
+            position: relative;
+        }
+
+        .hlc_meta {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 6px;
+            font-family: Georgia, "Times New Roman", "SimSun", serif;
+            font-size: 13px;
+            color: var(--hlc_graphite);
+            margin-bottom: 30px;
+        }
+
+        .hlc_title {
+            font-family: Georgia, "Times New Roman", "SimSun", serif;
+            font-weight: 600;
+            font-size: clamp(36px, 6.5vw, 56px);
+            line-height: 1.2;
+            letter-spacing: 0.02em;
+            max-width: 14em;
+        }
+
+        .hlc_subtitle {
+            margin-top: 16px;
+            max-width: 36em;
+            color: var(--hlc_graphite);
+        }
+
+        .hlc_subtitle b { color: var(--hlc_ink); font-weight: 600; }
+
+        /* 打样印章：页面载入时盖一次章 */
+        .hlc_stamp {
+            position: absolute;
+            top: 70px;
+            right: 0;
+            font-family: Georgia, "SimSun", serif;
+            font-size: 15px;
+            color: var(--hlc_stamp);
+            border: 2.5px solid var(--hlc_stamp);
+            border-radius: 6px;
+            padding: 5px 14px;
+            letter-spacing: 0.3em;
+            text-indent: 0.3em; /* 抵消末字间距，保持视觉居中 */
+            transform: rotate(-7deg);
+            user-select: none;
+            animation: hlc_stamp_in 0.45s cubic-bezier(0.2, 1.6, 0.4, 1) 0.7s both;
+        }
+
+        @keyframes hlc_stamp_in {
+            from { transform: rotate(-7deg) scale(1.9); opacity: 0; }
+            to   { transform: rotate(-7deg) scale(1);   opacity: 0.92; }
+        }
+
+        /* ============ 字号瀑布：同一枚字模排成字阶 ============ */
+        .hlc_waterfall {
+            display: flex;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 8px 30px;
+            margin-top: 48px;
+        }
+
+        .hlc_wf-item { display: flex; flex-direction: column; align-items: center; }
+
+        .hlc_wf-icon {
+            height: 104px;           /* 统一字高，图标坐在底线上 */
+            display: flex;
+            align-items: flex-end;
+            padding: 0 4px;
+            border-bottom: 1px solid var(--hlc_ink); /* 基线 */
+        }
+
+        .hlc_wf-icon i { line-height: 1; color: var(--hlc_ink); }
+
+        .hlc_wf-label {
+            margin-top: 9px;
+            font-family: Consolas, monospace;
+            font-size: 11px;
+            color: var(--hlc_graphite);
+        }
+
+        /* ============ 章节：样张图版 ============ */
+        .hlc_section { margin-top: 68px; }
+
+        .hlc_section-head {
+            display: flex;
+            align-items: baseline;
+            gap: 14px;
+            flex-wrap: wrap;
+            border-top: 1px solid var(--hlc_rule);
+            padding-top: 18px;
+            margin-bottom: 8px;
+        }
+
+        .hlc_section-head h2 {
+            font-family: Georgia, "Times New Roman", "SimSun", serif;
+            font-size: 21px;
+            font-weight: 600;
+        }
+
+        .hlc_section-note {
+            margin-left: auto;
+            font-family: Consolas, monospace;
+            font-size: 12px;
+            color: var(--hlc_graphite);
+        }
+
+        .hlc_lede { color: var(--hlc_graphite); max-width: 40em; margin-bottom: 24px; }
+
+        /* ---- 样字表：图标坐在基线上 ---- */
+        .hlc_spec-table { display: flex; flex-wrap: wrap; }
+
+        .hlc_spec-group {
+            width: 100%;
+            font-family: Georgia, "SimSun", serif;
+            font-size: 13px;
+            color: var(--hlc_stamp);
+            padding: 26px 0 10px;
+        }
+
+        .hlc_spec-group:first-child { padding-top: 14px; }
+
+        .hlc_spec-cell {
+            width: 12.5%;
+            min-width: 96px;
+            flex-grow: 1;
+            text-align: center;
+            padding: 20px 6px 14px;
+            border-bottom: 1px solid var(--hlc_rule); /* 行基线 */
+            transition: color 0.2s ease;
+        }
+
+        .hlc_spec-cell i {
+            display: block;
+            font-size: 30px;
+            line-height: 1;
+            color: var(--hlc_ink);
+            margin-bottom: 12px;
+            transition: color 0.2s ease;
+        }
+
+        .hlc_spec-cell:hover i { color: var(--hlc_stamp); }
+
+        .hlc_spec-cell small {
+            font-family: Consolas, monospace;
+            font-size: 11px;
+            color: var(--hlc_graphite);
+            word-break: break-all;
+        }
+
+        /* ---- 油墨色卡 ---- */
+        .hlc_chips { display: flex; flex-wrap: wrap; gap: 20px; }
+
+        .hlc_chip {
+            width: 128px;
+            background: #fffdf8;
+            border: 1px solid var(--hlc_rule);
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+        }
+
+        .hlc_chip:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 14px rgba(41, 36, 29, 0.1);
+        }
+
+        .hlc_chip-band {
+            height: 66px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+        }
+
+        .hlc_chip-info { padding: 9px 12px 10px; border-top: 1px solid var(--hlc_rule); }
+
+        .hlc_chip-info b { display: block; font-size: 13px; font-weight: 600; }
+
+        .hlc_chip-info small {
+            font-family: Consolas, monospace;
+            font-size: 11px;
+            color: var(--hlc_graphite);
+        }
+
+        /* ---- 动样 ---- */
+        .hlc_motion { display: flex; flex-wrap: wrap; gap: 26px 58px; padding-top: 10px; }
+
+        .hlc_motion-item { text-align: center; }
+
+        .hlc_motion-item i {
+            display: block;
+            font-size: 34px;
+            line-height: 1;
+            margin-bottom: 12px;
+            color: var(--hlc_ink);
+        }
+
+        .hlc_motion-item small {
+            font-family: Consolas, monospace;
+            font-size: 11px;
+            color: var(--hlc_graphite);
+        }
+
+        /* ---- 打样批注（代码） ---- */
+        .hlc_proof {
+            background: var(--hlc_ink);
+            color: #efe9dc;
+            font-family: Consolas, "Cascadia Mono", monospace;
+            font-size: 13px;
+            line-height: 2.1;
+            padding: 22px 26px;
+            overflow-x: auto;
+        }
+
+        .hlc_c-cls  { color: #e88f7d; }  /* 类名：打样红（亮） */
+        .hlc_c-tag  { color: #8fb6b2; }  /* 标签：描图蓝 */
+        .hlc_c-com  { color: #8a8272; }  /* 注释 */
+
+        .hlc_notes { margin-top: 20px; }
+
+        .hlc_note {
+            font-size: 14px;
+            color: var(--hlc_graphite);
+            padding-left: 1.6em;
+            text-indent: -1.6em;
+            margin-bottom: 6px;
+        }
+
+        .hlc_note::before { content: "※ "; color: var(--hlc_stamp); }
+
+        /* ============ 版权栏 ============ */
+        .hlc_colophon {
+            margin-top: 76px;
+            border-top: 2px solid var(--hlc_ink);
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-family: Georgia, "SimSun", serif;
+            font-size: 13px;
+            color: var(--hlc_graphite);
+        }
+
+        .hlc_colophon a {
+            color: var(--hlc_ink);
+            text-decoration-color: var(--hlc_stamp);
+            text-underline-offset: 3px;
+        }
+
+        .hlc_colophon a:hover { color: var(--hlc_stamp); }
+
+        /* ============ 动效克制：尊重系统设置 ============ */
+        @media (prefers-reduced-motion: reduce) {
+            .hlc_stamp { animation: none; opacity: 0.92; }
+            .hlc_chip, .hlc_spec-cell i { transition: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="hlc_sheet">
+
+        <!-- ============ 刊头 ============ -->
+        <header class="hlc_masthead">
+            <p class="hlc_meta">
+                <span>Font Awesome 6 · 字体图标</span>
+                <span>活字打样稿 · 本地引阅</span>
+            </p>
+            <h1 class="hlc_title">图标，是一种字体。</h1>
+            <p class="hlc_subtitle">
+                Font Awesome 把上千枚图标刻进一套字模（<b>webfonts</b> 目录里的 woff2 文件），
+                用 <b>font-size</b> 缩放、用 <b>color</b> 上色、和文字排在一行——
+                因为它本来就是文字。下面这排字阶，就是同一枚字模的六个字号。
+            </p>
+            <span class="hlc_stamp" aria-hidden="true">已打样</span>
+
+            <!-- 字号瀑布 -->
+            <div class="hlc_waterfall">
+                <div class="hlc_wf-item"><span class="hlc_wf-icon"><i class="fa-solid fa-heart" style="font-size:20px;"></i></span><span class="hlc_wf-label">20px</span></div>
+                <div class="hlc_wf-item"><span class="hlc_wf-icon"><i class="fa-solid fa-heart" style="font-size:30px;"></i></span><span class="hlc_wf-label">30px</span></div>
+                <div class="hlc_wf-item"><span class="hlc_wf-icon"><i class="fa-solid fa-heart" style="font-size:44px;"></i></span><span class="hlc_wf-label">44px</span></div>
+                <div class="hlc_wf-item"><span class="hlc_wf-icon"><i class="fa-solid fa-heart" style="font-size:58px;"></i></span><span class="hlc_wf-label">58px</span></div>
+                <div class="hlc_wf-item"><span class="hlc_wf-icon"><i class="fa-solid fa-heart" style="font-size:74px;"></i></span><span class="hlc_wf-label">74px</span></div>
+                <div class="hlc_wf-item"><span class="hlc_wf-icon"><i class="fa-solid fa-heart" style="font-size:92px;"></i></span><span class="hlc_wf-label">92px</span></div>
+            </div>
+        </header>
+
+        <!-- ============ 1. 样字表 ============ -->
+        <section class="hlc_section">
+            <div class="hlc_section-head">
+                <h2>样字表</h2>
+                <span class="hlc_section-note">三副字模 · 坐在基线上</span>
+            </div>
+            <p class="hlc_lede">字体家族分三个字重：实心最常用，空心适合轻盈界面，品牌字模收录各厂商标标。</p>
+
+            <div class="hlc_spec-table">
+                <span class="hlc_spec-group">实心 fa-solid</span>
+                <div class="hlc_spec-cell"><i class="fa-solid fa-heart"></i><small>heart</small></div>
+                <div class="hlc_spec-cell"><i class="fa-solid fa-star"></i><small>star</small></div>
+                <div class="hlc_spec-cell"><i class="fa-solid fa-user"></i><small>user</small></div>
+                <div class="hlc_spec-cell"><i class="fa-solid fa-house"></i><small>house</small></div>
+                <div class="hlc_spec-cell"><i class="fa-solid fa-cart-shopping"></i><small>cart</small></div>
+                <div class="hlc_spec-cell"><i class="fa-solid fa-camera"></i><small>camera</small></div>
+                <div class="hlc_spec-cell"><i class="fa-solid fa-bell"></i><small>bell</small></div>
+                <div class="hlc_spec-cell"><i class="fa-solid fa-gift"></i><small>gift</small></div>
+
+                <span class="hlc_spec-group">空心 fa-regular</span>
+                <div class="hlc_spec-cell"><i class="fa-regular fa-heart"></i><small>heart</small></div>
+                <div class="hlc_spec-cell"><i class="fa-regular fa-star"></i><small>star</small></div>
+                <div class="hlc_spec-cell"><i class="fa-regular fa-user"></i><small>user</small></div>
+                <div class="hlc_spec-cell"><i class="fa-regular fa-face-smile"></i><small>smile</small></div>
+                <div class="hlc_spec-cell"><i class="fa-regular fa-clock"></i><small>clock</small></div>
+                <div class="hlc_spec-cell"><i class="fa-regular fa-comment"></i><small>comment</small></div>
+
+                <span class="hlc_spec-group">品牌 fa-brands</span>
+                <div class="hlc_spec-cell"><i class="fa-brands fa-weixin" style="color:#07c160;"></i><small>weixin</small></div>
+                <div class="hlc_spec-cell"><i class="fa-brands fa-alipay" style="color:#1677ff;"></i><small>alipay</small></div>
+                <div class="hlc_spec-cell"><i class="fa-brands fa-qq" style="color:#12b7f5;"></i><small>qq</small></div>
+                <div class="hlc_spec-cell"><i class="fa-brands fa-bilibili" style="color:#fb7299;"></i><small>bilibili</small></div>
+                <div class="hlc_spec-cell"><i class="fa-brands fa-chrome" style="color:#ea4335;"></i><small>chrome</small></div>
+                <div class="hlc_spec-cell"><i class="fa-brands fa-github"></i><small>github</small></div>
+                <div class="hlc_spec-cell"><i class="fa-brands fa-apple"></i><small>apple</small></div>
+                <div class="hlc_spec-cell"><i class="fa-brands fa-google" style="color:#4285f4;"></i><small>google</small></div>
+            </div>
+        </section>
+
+        <!-- ============ 2. 油墨色卡 ============ -->
+        <section class="hlc_section">
+            <div class="hlc_section-head">
+                <h2>油墨色卡</h2>
+                <span class="hlc_section-note">color 换墨 · 即刷即干</span>
+            </div>
+            <p class="hlc_lede">字模本色是墨黑，换一支笔（改 color）就能印出任何颜色。</p>
+
+            <div class="hlc_chips">
+                <div class="hlc_chip">
+                    <div class="hlc_chip-band" style="color:#bf3b2b;"><i class="fa-solid fa-thumbs-up"></i></div>
+                    <div class="hlc_chip-info"><b>朱砂</b><small>#BF3B2B</small></div>
+                </div>
+                <div class="hlc_chip">
+                    <div class="hlc_chip-band" style="color:#2b4c9b;"><i class="fa-solid fa-thumbs-up"></i></div>
+                    <div class="hlc_chip-info"><b>群青</b><small>#2B4C9B</small></div>
+                </div>
+                <div class="hlc_chip">
+                    <div class="hlc_chip-band" style="color:#2e7d5b;"><i class="fa-solid fa-thumbs-up"></i></div>
+                    <div class="hlc_chip-info"><b>松绿</b><small>#2E7D5B</small></div>
+                </div>
+                <div class="hlc_chip">
+                    <div class="hlc_chip-band" style="color:#c98a2d;"><i class="fa-solid fa-thumbs-up"></i></div>
+                    <div class="hlc_chip-info"><b>赭石</b><small>#C98A2D</small></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ 3. 动样 ============ -->
+        <section class="hlc_section">
+            <div class="hlc_section-head">
+                <h2>动样</h2>
+                <span class="hlc_section-note">库自带动画类 · 加类名即动</span>
+            </div>
+            <p class="hlc_lede">fa-spin、fa-beat、fa-shake 是 Font Awesome 附送的三种动效，不需要自己写关键帧。</p>
+
+            <div class="hlc_motion">
+                <div class="hlc_motion-item"><i class="fa-solid fa-spinner fa-spin"></i><small>fa-spin</small></div>
+                <div class="hlc_motion-item"><i class="fa-solid fa-circle-notch fa-spin"></i><small>fa-spin</small></div>
+                <div class="hlc_motion-item"><i class="fa-solid fa-heart fa-beat" style="color:#bf3b2b;"></i><small>fa-beat</small></div>
+                <div class="hlc_motion-item"><i class="fa-solid fa-star fa-shake" style="color:#c98a2d;"></i><small>fa-shake</small></div>
+            </div>
+        </section>
+
+        <!-- ============ 4. 打样批注 ============ -->
+        <section class="hlc_section">
+            <div class="hlc_section-head">
+                <h2>打样批注</h2>
+                <span class="hlc_section-note">四行可用</span>
+            </div>
+
+            <div class="hlc_proof">
+                <span class="hlc_c-tag">&lt;link</span> rel="stylesheet" href="cdn/css/all.min.css"<span class="hlc_c-tag">&gt;</span><br><br>
+                <span class="hlc_c-tag">&lt;i</span> <span class="hlc_c-cls">class="fa-solid fa-heart"</span><span class="hlc_c-tag">&gt;&lt;/i&gt;</span> &nbsp;&nbsp;<span class="hlc_c-com">实心</span><br>
+                <span class="hlc_c-tag">&lt;i</span> <span class="hlc_c-cls">class="fa-regular fa-heart"</span><span class="hlc_c-tag">&gt;&lt;/i&gt;</span> &nbsp;<span class="hlc_c-com">空心</span><br>
+                <span class="hlc_c-tag">&lt;i</span> <span class="hlc_c-cls">class="fa-brands fa-weixin"</span><span class="hlc_c-tag">&gt;&lt;/i&gt;</span> &nbsp;&nbsp;<span class="hlc_c-com">品牌</span><br>
+                <span class="hlc_c-tag">&lt;i</span> <span class="hlc_c-cls">class="fa-solid fa-spinner fa-spin"</span><span class="hlc_c-tag">&gt;&lt;/i&gt;</span> <span class="hlc_c-com">旋转</span>
+            </div>
+
+            <div class="hlc_notes">
+                <p class="hlc_note">字模藏在 <b>cdn/webfonts</b> 里，由 CSS 的 @font-face 加载——图标和文字共用同一套机制。</p>
+                <p class="hlc_note">缩放改 font-size，换色改 color：它继承了文字的一切属性。</p>
+                <p class="hlc_note">类名前缀决定字模：fa-solid / fa-regular / fa-brands，后接图标名。</p>
+            </div>
+        </section>
+
+        <!-- ============ 版权栏 ============ -->
+        <footer class="hlc_colophon">
+            <span>打样完毕 · 计示字模二十六枚</span>
+            <span>
+                <a href="iconfont-2.html">下一张图纸：Lucide 矢量制图</a>&emsp;
+                <a href="index.html">返回首页</a>
+            </span>
+        </footer>
+
+    </main>
+
+</body>
+</html>
