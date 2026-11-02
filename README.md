@@ -57,3 +57,4 @@ python -m http.server 8080
 ## 发布方式
 
 推送到 `main` 分支后，GitHub Actions 自动构建并发布到 GitHub Pages（见 `.github/workflows/pages.yml`）。
+GitHub Pages 用于展示本课程网页。
