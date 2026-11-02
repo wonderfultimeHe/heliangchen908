@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>课堂测试9 · 新闻选项卡 — 何良辰 908</title>
     <style>
-        /* ============ 设计令牌（经典门户风） ============ */
+        /* 按课堂参考图：250px 新闻栏、宋体小字、红框选项卡。 */
         :root {
             --hlc_ink: #000000;        /* 正文黑 */
-            --hlc_soft: #888888;       /* 副标题灰 */
             --hlc_red: #cc0000;        /* 选中红 */
-            --hlc_blue: #1e50a2;       /* 分隔蓝线 */
+            --hlc_blue: #6699ff;       /* 分隔蓝线 */
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -19,33 +18,35 @@
             background: #ffffff;
             color: var(--hlc_ink);
             font-family: "SimSun", "宋体", serif;
-            font-size: 14px;
-            line-height: 1.7;
+            font-size: 12px;
+            line-height: 24px;
         }
 
         .hlc_wrap {
-            width: 560px;
-            max-width: 94vw;
-            margin: 56px auto 0;
+            width: 250px;
+            max-width: calc(100% - 16px);
+            margin: 6px 8px;
         }
 
         /* ============ 选项卡条 ============ */
         .hlc_tab_bar {
             display: flex;
-            align-items: center;
-            gap: 30px;
-            padding: 0 6px 8px;
+            height: 26px;
             border-bottom: 2px solid var(--hlc_blue); /* 蓝色分隔线 */
         }
 
         .hlc_tab_btn {
-            font-family: "SimHei", "黑体", sans-serif;
-            font-size: 15px;
+            position: relative;
+            flex: 0 0 74px;
+            height: 26px;
+            font-family: inherit;
+            font-size: 12px;
+            line-height: 24px;
             font-weight: bold;
             color: var(--hlc_ink);
-            background: none;
+            background: transparent;
             border: 1px solid transparent; /* 占位，避免选中时尺寸跳动 */
-            padding: 2px 9px;
+            padding: 0;
             cursor: pointer;
         }
 
@@ -54,7 +55,10 @@
         /* 选中态：红字 + 红色边框 */
         .hlc_tab_btn.hlc_active {
             color: var(--hlc_red);
+            background: #ffffff;
             border-color: var(--hlc_red);
+            border-bottom-color: #ffffff; /* 白底遮住蓝线，与内容区衔接。 */
+            z-index: 1;
         }
 
         .hlc_tab_btn:focus-visible {
@@ -68,12 +72,27 @@
         .hlc_tab_panel.hlc_active { display: block; }
 
         .hlc_news_list {
-            list-style: square;               /* 方块项目符号 */
-            padding-left: 26px;
-            padding-top: 6px;
+            list-style: none;
+            padding-top: 12px;
         }
 
-        .hlc_news_list li { padding: 6px 0; }
+        .hlc_news_list li {
+            position: relative;
+            height: 24px;
+            padding-left: 10px;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .hlc_news_list li::before {
+            position: absolute;
+            top: 11px;
+            left: 2px;
+            width: 2px;
+            height: 2px;
+            background: var(--hlc_ink);
+            content: "";
+        }
 
         .hlc_news_list a {
             color: var(--hlc_ink);
@@ -85,27 +104,10 @@
             text-decoration: underline;
         }
 
-        /* 副标题：灰色小字跟在主标题后面 */
+        /* 参考图中的补充文字与标题保持相同字号、颜色。 */
         .hlc_sub {
-            color: var(--hlc_soft);
-            font-size: 13px;
             margin-left: 6px;
         }
-
-        /* ============ 页脚署名 ============ */
-        .hlc_footer {
-            margin-top: 28px;
-            padding-top: 12px;
-            border-top: 1px dashed #cccccc;
-            font-size: 13px;
-            color: var(--hlc_soft);
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .hlc_footer a { color: var(--hlc_blue); }
     </style>
 </head>
 <body>
@@ -138,7 +140,7 @@
             <!-- 官方回应 -->
             <div class="hlc_tab_panel" id="hlc_panel_response">
                 <ul class="hlc_news_list">
-                    <li><a href="#">“大绿鸭”、翘尾鸭凑热闹 法官解读“山寨鸭”是否侵权</a></li>
+                    <li><a href="#">大绿鸭、翘尾鸭凑热闹 法官解读“山寨鸭”是否侵权</a></li>
                     <li><a href="#">国家旅游局回应涨价：“团队游价格系正常浮动”</a></li>
                     <li><a href="#">国家旅游局回应“新旅游法实施后旅行社团队游涨价”</a></li>
                     <li><a href="#">出游遇纠纷可依《旅游法》维权 明确旅游投诉处理机制</a></li>
@@ -166,11 +168,6 @@
             </div>
         </div>
 
-        <!-- ============ 页脚署名 ============ -->
-        <footer class="hlc_footer">
-            <span>姓名：何良辰 · 学号：908</span>
-            <a href="index.html">返回首页</a>
-        </footer>
     </div>
 
     <script>
