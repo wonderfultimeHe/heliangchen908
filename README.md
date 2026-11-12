@@ -29,6 +29,9 @@
 | Lucide 矢量图标 | `iconfont-2.html` | SVG 图标实验（本地资源） |
 | Tab 选项卡组件 | `tabs.html` + `js/tabs.js` | 可复用选项卡组件，事件监听驱动 |
 | 课堂测试 · 新闻选项卡 | `test9-tab.html` | 最新投诉 / 官方回应 / 追踪调查 |
+| 网格布局 | `grid908.html` | CSS Grid 课堂练习（骨架已建，内容待补充） |
+| Swiper 轮播图 | `swiper-task.html` | 大国重器光影展：拖动 / 圆点箭头 / 自动播放 / 六种效果切换 + creative 电影墙 + 键盘翻页 |
+| AI 提示词记录 | `hlc_prompt.md` | 与 AI 协作完成课堂作业的完整提示词历史 |
 | 美团图像解决方案 | `meituan-web/image-solution/` | 字体图标与 SVG 自适应底部导航实验 |
 | 美团仿站应用 | `meituan-web/` | 八个页面的完整应用 |
 
@@ -40,8 +43,9 @@ heliangchen908/
 ├── *.html / *.css          # 各课堂练习页面与样式
 ├── js/                     # 可复用脚本（tabs.js）
 ├── img/                    # 图片资源
+├── swiper-imgs/            # Swiper 课堂作业的展品图片（含 AI 生成图及生成记录）
 ├── font/                   # iconfont 字体资源
-├── cdn/                    # 本地化的图标库（Font Awesome / Lucide）
+├── cdn/                    # 本地化的组件库（Font Awesome / Lucide / Swiper）
 └── meituan-web/            # 美团仿站应用与图像解决方案实验
 ```
 
@@ -56,4 +60,4 @@ python -m http.server 8080
 
 ## 发布方式
 
-推送到 `main` 分支后，GitHub Actions 自动构建并发布到 GitHub Pages（见 `.github/workflows/pages.yml`）。
+推送到 `main` 分支即发布：GitHub Pages 已配置为从 `main` 分支直接部署，推送后稍等片刻即可在线访问。
